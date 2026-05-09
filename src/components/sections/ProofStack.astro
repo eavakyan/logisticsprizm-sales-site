@@ -1,0 +1,77 @@
+---
+// Replaces the fake customer testimonials + "avg Growth customer saves $14.8K" claims
+// with honest industry-benchmark framing. Every stat below is either:
+//   - a public industry benchmark (with a plain-language source note), or
+//   - a product capability target measured on the engineering bench, not a customer outcome.
+// When we have real customer data we'll restore the quote cards.
+---
+<section id="proof" class="relative bg-navy-900 text-white py-24 md:py-32 overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image:
+    linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+    background-size: 80px 80px;"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl">
+      <p class="eyebrow text-prizm-400 reveal">The math, honestly</p>
+      <h2 class="mt-3 text-h1 font-bold reveal">
+        Industry numbers you can look up.<br/>
+        <span class="text-white/50">Product targets we can measure.</span>
+      </h2>
+      <p class="mt-5 text-white/70 reveal max-w-2xl">
+        LogisticsPrizm is pre-launch — we don&#39;t have customer testimonials to publish yet, and we won&#39;t
+        make any up. Here is where the industry stands today and what we&#39;ve built to change it.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-6 reveal">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+        <div class="text-5xl font-bold text-prizm-400">&lt;60<span class="text-2xl text-white/60">s</span></div>
+        <p class="mt-2 text-sm text-white/60 font-mono uppercase tracking-wider">AI quote target · product spec</p>
+        <p class="mt-5 text-white/80 leading-relaxed">
+          We&#39;ve engineered the quote pipeline to return structured pricing in under a minute.
+          Industry benchmark for manual quoting: <strong class="text-white">3–6 hours</strong> per RFQ.
+        </p>
+        <footer class="mt-5 text-xs text-white/50">Source: Cargofive, 2025 freight-forwarder survey</footer>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+        <div class="text-5xl font-bold text-prizm-400">3–7%</div>
+        <p class="mt-2 text-sm text-white/60 font-mono uppercase tracking-wider">of freight spend, typically leaked to invoice errors</p>
+        <p class="mt-5 text-white/80 leading-relaxed">
+          The invoice-reconciliation engine is designed to surface that waste per-shipment.
+          For a $10M forwarder that&#39;s $300K–$700K a year.
+        </p>
+        <footer class="mt-5 text-xs text-white/50">Source: Freightify, 2025 revenue-leakage report</footer>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+        <div class="text-5xl font-bold text-prizm-400">15–30</div>
+        <p class="mt-2 text-sm text-white/60 font-mono uppercase tracking-wider">disconnected systems per mid-market forwarder</p>
+        <p class="mt-5 text-white/80 leading-relaxed">
+          We built LogisticsPrizm to replace that stack with one data model, one login, and one monthly bill.
+          The unification itself is the product.
+        </p>
+        <footer class="mt-5 text-xs text-white/50">Source: Logi-Sys, fragmented-freight study, 2024</footer>
+      </div>
+    </div>
+
+    <div class="mt-14 reveal">
+      <div class="flex flex-wrap items-end justify-between gap-6 rounded-2xl border border-prizm-500/40 bg-gradient-to-br from-prizm-500/10 to-transparent p-8">
+        <div class="max-w-xl">
+          <p class="eyebrow text-prizm-400">Quick math, not a sales pitch</p>
+          <h3 class="mt-2 text-2xl font-bold">What would even 3% of your freight spend cover?</h3>
+          <p class="mt-2 text-white/75">
+            If you move $5M/year, that&#39;s $150K. Our Growth plan is $4,788/year billed annually.
+            We&#39;ll help you model the reconciliation recovery on your actual lanes during the demo —
+            no magic numbers, just your invoices.
+          </p>
+        </div>
+        <a
+          href="/request-demo?calc=1"
+          class="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors"
+        >Model the ROI with us<span aria-hidden>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>

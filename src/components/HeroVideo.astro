@@ -1,0 +1,72 @@
+---
+import { APP_LINKS } from '@/lib/links';
+// Full-bleed 74-second presentation in an iframe. The video already contains its own
+// wordmark, headlines, and taglines. Headline + CTAs live BELOW the video in a wide
+// framing band. Copy reframed as capability / target, not customer-achieved outcome.
+---
+<section class="relative w-full hero-frame" style="height: min(100vh, 1200px); min-height: 640px;">
+  <iframe
+    src="/media/hero-video.html"
+    title="LogisticsPrizm presentation"
+    loading="eager"
+    class="absolute inset-0 w-full h-full border-0"
+    aria-label="Seventy-four-second presentation: the problem, the platform, predictive tracking, and the moat"
+    allow="autoplay"
+  ></iframe>
+
+  <div class="absolute inset-x-0 top-0 h-24 pointer-events-none"
+       style="background: linear-gradient(180deg, rgba(13,15,26,0.55) 0%, rgba(13,15,26,0) 100%);"></div>
+
+  <div class="absolute top-5 left-6 md:top-8 md:left-10 flex items-center gap-2 text-white/80 pointer-events-none">
+    <span class="hidden md:inline font-mono text-[11px] uppercase tracking-[0.2em] text-white/45">presentation · 74s · auto-loops</span>
+  </div>
+
+  <a
+    href="#framing"
+    aria-label="Scroll to read more"
+    class="absolute bottom-5 right-6 md:right-10 text-white/55 hover:text-white flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em]"
+  >
+    Scroll
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<section id="framing" class="relative bg-navy-900 text-white py-16 md:py-24 border-b border-white/5">
+  <div class="w-full px-8 md:px-16 lg:px-24">
+    <div class="grid lg:grid-cols-[1.6fr_auto] gap-10 lg:gap-20 items-end">
+      <div class="max-w-none">
+        <p class="eyebrow text-prizm-400">Now accepting Founding Customers</p>
+        <h1 class="mt-4 font-bold tracking-tight leading-[0.95]" style="font-size: clamp(3rem, 8vw, 7rem); letter-spacing: -0.04em;">
+          One platform.
+          <span class="gradient-amber">Every shipment.</span>
+        </h1>
+        <p class="mt-6 text-white/75 leading-relaxed max-w-4xl" style="font-size: clamp(1.1rem, 1.6vw, 1.5rem);">
+          An AI-native TMS built for mid-market freight forwarders, 3PLs, and NVOCCs —
+          designed to draft a structured quote in under a minute, flag invoice variance
+          before you pay, and keep ITAR-flagged freight on rails.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row lg:flex-col gap-3 lg:items-end lg:pb-2">
+        <a
+          href="/request-demo"
+          class="inline-flex justify-center items-center gap-2 px-7 py-4 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-lg shadow-prizm-500/20 whitespace-nowrap text-base"
+        >
+          Book a 20-minute demo
+          <span aria-hidden>→</span>
+        </a>
+        <a
+          href={APP_LINKS.trial}
+          class="inline-flex justify-center items-center gap-2 px-7 py-4 rounded-lg bg-white/10 backdrop-blur text-white font-semibold hover:bg-white/20 transition-colors border border-white/15 whitespace-nowrap text-base"
+        >
+          Start 14-day trial
+        </a>
+        <p class="text-[11px] text-white/45 font-mono tracking-wider lg:text-right">
+          No card · Founding Customer pricing · limited cohort
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

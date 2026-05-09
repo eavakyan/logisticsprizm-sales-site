@@ -1,0 +1,41 @@
+---
+// Each item: the capability + a short, honest description of what's built. Headlines
+// reframed as product targets instead of outcomes customers have already achieved.
+const features = [
+  { title: 'AI Quote Engine', outcome: 'Sub-minute structured quote generation', body: 'pgvector retrieves the ten most-similar historical quotes; GPT-4o composes a line-item breakdown — base freight, fuel, BAF, documentation, customs, insurance — which your rep reviews before sending.' },
+  { title: 'Unified Rate Engine', outcome: 'Contracts + FAK + surcharges + spot in one index', body: 'Upload a carrier rate card once. Every quote after that is one query against the merged lane-mode-date-container search index. Replaces the "let me check the spreadsheet" step.' },
+  { title: 'Live Shipment Tracking', outcome: 'Ocean, air, road, rail, intermodal — one event stream', body: 'Carrier webhook and polling adapters normalize into 13 canonical event types. The customer portal and admin view read the same timeline in real time over WebSockets.' },
+  { title: 'Invoice Reconciliation', outcome: 'Line-item matching against quote + rate card', body: 'OCR extracts each line from the carrier invoice. The engine matches against your rate card and the original quote and flags variance above ±5% before anyone pays.' },
+  { title: 'Demurrage & Detention Radar', outcome: 'Free-time alerts at 48 / 24 / 2 hours', body: 'Free-time windows tracked per container. Alerts fire via email, push, and Slack. Designed to give your team a chance to act before the meter starts.' },
+  { title: 'ITAR Compliance Workflow', outcome: 'Defense-grade audit trail, built in', body: 'Denied-party screening against OFAC, BIS Entity List, DTAG, EU consolidated, UK HMT, and UN sanctions. Every screen, resolution, and document access is logged. Row-Level Security isolates tenants at the database layer.' },
+  { title: 'RAG Chatbot & AI Search', outcome: 'Knowledge-base Q&A with citations', body: 'Your SOPs, rate guides, Incoterms — embedded and retrievable in seconds. The support bot answers with cited sources so your team handles the exceptions.' },
+  { title: 'Lead Scoring (6-factor)', outcome: 'A 0–100 pipeline signal', body: 'Revenue, industry fit, engagement, source quality, shipment volume, and recency — combined into a single score you can sort and filter by.' },
+  { title: 'Financials Module', outcome: 'Margin by shipment, lane, customer, carrier', body: 'User-editable fee schedules and tax rates. Every transaction persists its fees and taxes at booking. Aging, DSO, cash flow, and top-customer views drillable by any time range.' },
+];
+---
+<section class="bg-white py-24 md:py-32 border-y border-black/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl">
+      <p class="eyebrow reveal">What's actually in the box</p>
+      <h2 class="mt-3 text-h1 font-bold text-navy-900 reveal">
+        Nine capabilities most operators buy separately —<br/>
+        <span class="gradient-amber">and duct-tape together.</span>
+      </h2>
+      <p class="mt-5 text-lg text-navy-900/70 max-w-prose reveal">
+        Every module listed below is implemented in the platform today. Production readiness varies by module —
+        we&#39;ll walk you through maturity and roadmap on the demo. Everything above the Solo tier is included
+        in every plan; no paid add-ons.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map(f => (
+        <article class="rounded-2xl border border-black/10 p-7 hover:border-prizm-300 hover:shadow-md transition-all reveal">
+          <h3 class="text-lg font-bold text-navy-900">{f.title}</h3>
+          <p class="mt-1 font-mono text-xs text-prizm-600 uppercase tracking-wider">{f.outcome}</p>
+          <p class="mt-4 text-sm text-navy-900/75 leading-relaxed">{f.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

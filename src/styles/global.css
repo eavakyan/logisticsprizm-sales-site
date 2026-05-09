@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --prizm-500: #FF8C00;
+  --prizm-600: #E07800;
+  --navy-900: #0F1B2D;
+  --ocean-deep: #065A82;
+  --ocean-mint: #02C39A;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #FAFAF8;
+  color: #0F1B2D;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+/* Prose polish */
+.prose-lp p { max-width: 65ch; }
+.prose-lp h2 { font-weight: 700; }
+.prose-lp a { color: var(--prizm-600); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Section reveal on scroll — uses IntersectionObserver class toggle */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero video container */
+.hero-frame {
+  background: #0d0f1a;
+}
+
+/* Typography helper for editorial monospace labels */
+.eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--prizm-600);
+}
+
+/* Gradient text utility */
+.gradient-amber {
+  background: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-ocean {
+  background: linear-gradient(135deg, #065A82 0%, #02C39A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

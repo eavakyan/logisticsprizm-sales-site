@@ -1,0 +1,50 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ITARMoat from '@/components/sections/ITARMoat.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+---
+<BaseLayout
+  title="ITAR-ready logistics software — LogisticsPrizm"
+  description="Denied-party screening, HS code classification with citations, tamper-evident audit trail, and US-only AI inference. ITAR compliance built in, not bolted on."
+>
+  <section class="pt-24 pb-14 bg-ocean-midnight text-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow text-ocean-mint">Defense-grade compliance</p>
+      <h1 class="mt-3 text-h1 font-bold">ITAR violations start at <span class="gradient-amber">$500,000</span>.</h1>
+      <p class="mt-3 text-2xl text-white/80">Your TMS should treat compliance like it matters.</p>
+    </div>
+  </section>
+
+  <ITARMoat />
+
+  <section class="bg-white py-24">
+    <div class="max-w-3xl mx-auto px-6 prose-lp">
+      <p class="eyebrow">The long answer</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900">Why we built compliance in, not on.</h2>
+      <div class="mt-6 space-y-5 text-lg text-navy-900/85 leading-relaxed">
+        <p>
+          US Customs, the Bureau of Industry and Security, and the State Department&#39;s Directorate of Defense
+          Trade Controls have made one thing explicit since 2023: the freight forwarder is a compliance gatekeeper,
+          not a neutral carrier. If denied-party cargo leaves your facility, you pay.
+        </p>
+        <p>
+          The mid-market response has been to buy a screening SaaS ($15K+/yr), a customs filing platform ($25K+/yr),
+          and an audit trail bolted onto the TMS that nobody trusts. Then to hope nothing ever gets audited.
+        </p>
+        <p>
+          We chose the harder path. Screening happens at booking, at quote creation, at shipment confirmation, and
+          at every document upload. The audit log captures every access with actor, IP, user-agent, and before/after
+          JSONB diff. Row-Level Security isolates tenants at the PostgreSQL layer — not by application code that can
+          be bypassed.
+        </p>
+        <p>
+          For the customers who need it, we run inference on a US-only Ollama instance inside your cloud. No cargo
+          description, HS code query, or shipment metadata leaves your network. It&#39;s not a premium upsell — it&#39;s
+          a toggle on the organization settings page.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

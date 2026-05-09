@@ -1,0 +1,58 @@
+---
+import { APP_LINKS, CONTACT } from '@/lib/links';
+---
+<footer class="mt-24 bg-navy-900 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10">
+      <div class="col-span-2">
+        <a href="/" class="flex items-center gap-2 font-bold tracking-tight">
+          <span class="inline-flex w-9 h-9 rounded-lg bg-gradient-to-br from-prizm-500 to-prizm-600 items-center justify-center text-white">✦</span>
+          <span class="text-xl">LogisticsPrizm</span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm text-white/70">
+          Ship smarter. Grow faster. An AI-first transportation management system for
+          freight forwarders, 3PLs, and NVOCCs. Pre-launch — onboarding Founding Customers now.
+        </p>
+        <p class="mt-6 text-xs text-white/50">
+          <a href={`mailto:${CONTACT.salesEmail}`} class="hover:text-prizm-300">{CONTACT.salesEmail}</a>
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-white/60 mb-4">Product</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/#product" class="text-white/80 hover:text-prizm-300">Platform</a></li>
+          <li><a href="/itar" class="text-white/80 hover:text-prizm-300">ITAR Compliance</a></li>
+          <li><a href="/pricing" class="text-white/80 hover:text-prizm-300">Pricing</a></li>
+          <li><a href="/request-demo" class="text-white/80 hover:text-prizm-300">Book a demo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-white/60 mb-4">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="text-white/80 hover:text-prizm-300">About</a></li>
+          <li><a href="/contact" class="text-white/80 hover:text-prizm-300">Contact</a></li>
+          <li><a href={APP_LINKS.login} class="text-white/80 hover:text-prizm-300">Customer sign-in</a></li>
+          <li><a href={APP_LINKS.tracking} class="text-white/80 hover:text-prizm-300">Track a shipment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-white/60 mb-4">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/legal/privacy" class="text-white/80 hover:text-prizm-300">Privacy</a></li>
+          <li><a href="/legal/terms" class="text-white/80 hover:text-prizm-300">Terms</a></li>
+          <li><a href="/legal/security" class="text-white/80 hover:text-prizm-300">Security</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-white/50">
+      <div>© {new Date().getFullYear()} LogisticsPrizm, Inc. All rights reserved.</div>
+      <div class="flex items-center gap-5">
+        <span class="font-mono">Built for operators</span>
+      </div>
+    </div>
+  </div>
+</footer>

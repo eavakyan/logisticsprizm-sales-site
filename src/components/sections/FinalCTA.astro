@@ -1,0 +1,41 @@
+---
+import { APP_LINKS } from '@/lib/links';
+---
+<section class="relative overflow-hidden bg-navy-900 text-white py-24 md:py-32">
+  <div class="absolute inset-0 opacity-[0.05]" style="background-image:
+    radial-gradient(circle at 20% 20%, #FF8C00 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, #02C39A 0%, transparent 45%);"></div>
+
+  <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
+    <p class="eyebrow text-prizm-400">Last scroll. One decision.</p>
+    <h2 class="mt-3 text-h1 font-bold">
+      Your Tuesday has fifteen tabs.<br/>
+      <span class="gradient-amber">Tomorrow it has one.</span>
+    </h2>
+
+    <p class="mt-6 text-lg text-white/80 max-w-2xl mx-auto">
+      Book a 20-minute demo. We'll load your lanes, your carriers, and your rate cards into a sandbox
+      so you see what it feels like before you sign anything.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+      <a
+        href="/request-demo"
+        class="inline-flex justify-center items-center gap-2 px-7 py-4 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-lg shadow-prizm-500/25 text-base"
+      >
+        Book my demo
+        <span aria-hidden>→</span>
+      </a>
+      <a
+        href={APP_LINKS.trial}
+        class="inline-flex justify-center items-center gap-2 px-7 py-4 rounded-lg bg-white/10 backdrop-blur text-white font-semibold hover:bg-white/20 transition-colors border border-white/15 text-base"
+      >
+        Start free trial
+      </a>
+    </div>
+
+    <p class="mt-5 font-mono text-xs text-white/50 tracking-widest uppercase">
+      No credit card · Founding customer pricing through Q3 2026
+    </p>
+  </div>
+</section>

@@ -1,0 +1,184 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Book a LogisticsPrizm demo"
+  description="20 minutes. Your lanes, your carriers, your rate cards — loaded into a sandbox so you see the product against your own data."
+>
+  <section class="bg-surface-50 py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="eyebrow">Book a demo</p>
+        <h1 class="mt-3 text-h1 font-bold text-navy-900">
+          20 minutes.<br/>
+          <span class="gradient-amber">Your actual operations.</span>
+        </h1>
+        <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+          We don&#39;t do generic product tours. Send us two lanes you run and a rate card you care about
+          and we&#39;ll load them into a sandbox before the call so you see your own quotes, your own margins,
+          your own carriers.
+        </p>
+
+        <ul class="mt-8 space-y-3 text-navy-900/85">
+          <li class="flex gap-3"><span class="text-prizm-500 font-bold">✓</span> Zero commitment, zero credit card</li>
+          <li class="flex gap-3"><span class="text-prizm-500 font-bold">✓</span> Pre-loaded with your real lane pairs</li>
+          <li class="flex gap-3"><span class="text-prizm-500 font-bold">✓</span> Live AI quote generation in the session</li>
+          <li class="flex gap-3"><span class="text-prizm-500 font-bold">✓</span> Honest walkthrough — pricing, roadmap, and what&#39;s not built yet</li>
+        </ul>
+
+        <div class="mt-10 p-5 rounded-xl bg-white border border-black/10">
+          <p class="text-sm text-navy-900/70 leading-relaxed">
+            LogisticsPrizm is onboarding its first cohort of Founding Customers. We keep the group small
+            so every account gets direct access to the team building the product. If that sounds like
+            how you want to start a vendor relationship, we&#39;d like to talk.
+          </p>
+        </div>
+      </div>
+
+      <form id="demo-form" class="bg-white rounded-2xl border border-black/10 p-6 md:p-8 shadow-sm space-y-5">
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 mb-1.5">Work email</label>
+          <input name="email" type="email" required
+            class="w-full px-4 py-3 rounded-lg border border-black/15 focus:border-prizm-500 focus:ring-2 focus:ring-prizm-500/20 outline-none"
+            placeholder="you@company.com"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 mb-1.5">First name</label>
+            <input name="firstName" required class="w-full px-4 py-3 rounded-lg border border-black/15 focus:border-prizm-500 focus:ring-2 focus:ring-prizm-500/20 outline-none"/>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 mb-1.5">Last name</label>
+            <input name="lastName" required class="w-full px-4 py-3 rounded-lg border border-black/15 focus:border-prizm-500 focus:ring-2 focus:ring-prizm-500/20 outline-none"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 mb-1.5">Company</label>
+          <input name="company" required class="w-full px-4 py-3 rounded-lg border border-black/15 focus:border-prizm-500 focus:ring-2 focus:ring-prizm-500/20 outline-none"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 mb-1.5">Role</label>
+            <select name="role" class="w-full px-4 py-3 rounded-lg border border-black/15 focus:border-prizm-500 focus:ring-2 focus:ring-prizm-500/20 outline-none bg-white">
+              <option>Owner / Founder</option>
+              <option>Operations</option>
+              <option>Sales</option>
+              <option>IT / Engineering</option>
+              <option>Finance</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 mb-1.5">Monthly shipments</label>
+            <select name="volume" class="w-full px-4 py-3 rounded-lg border border-black/15 focus:border-prizm-500 focus:ring-2 focus:ring-prizm-500/20 outline-none bg-white">
+              <option>&lt; 50</option>
+              <option>50–250</option>
+              <option>250–1,000</option>
+              <option>1,000–5,000</option>
+              <option>5,000+</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-navy-900 mb-1.5">What would you most like to see? (optional)</label>
+          <textarea name="notes" rows="3" class="w-full px-4 py-3 rounded-lg border border-black/15 focus:border-prizm-500 focus:ring-2 focus:ring-prizm-500/20 outline-none" placeholder="Tell us about your lanes, your stack, or a deal you lost last week."></textarea>
+        </div>
+
+        <button type="submit" class="w-full inline-flex justify-center items-center gap-2 px-6 py-4 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors text-base">
+          Request my demo →
+        </button>
+
+        <p class="text-xs text-navy-900/55 text-center">We reply within one business day.</p>
+      </form>
+    </div>
+  </section>
+
+  <script is:inline>
+    // Capture intent/plan query params from upstream CTAs (Start Trial buttons,
+    // Pricing tier buttons) so sales sees what the visitor was clicking on.
+    (function captureIntent() {
+      const params = new URLSearchParams(window.location.search);
+      const intent = params.get('intent');           // 'trial' | 'demo' | undefined
+      const plan = params.get('plan') || params.get('tier');  // 'solo' | 'growth' | 'professional' | 'enterprise'
+      if (!intent && !plan) return;
+
+      // Banner above form: tell the visitor we know what they were trying to do
+      const formEl = document.getElementById('demo-form');
+      if (formEl && (intent || plan)) {
+        const banner = document.createElement('div');
+        banner.className = 'rounded-lg bg-prizm-50 border border-prizm-500/30 px-4 py-3 text-sm text-navy-900';
+        const planLabel = plan ? plan.charAt(0).toUpperCase() + plan.slice(1) : '';
+        if (intent === 'trial' && plan) {
+          banner.innerHTML = '<strong>Starting a trial on the ' + planLabel + ' plan.</strong> Fill out the form below — we will set up your sandbox and email you access details.';
+        } else if (intent === 'trial') {
+          banner.innerHTML = '<strong>Starting a free trial.</strong> Fill out the form below — we will set up your sandbox and email you access details.';
+        } else if (plan) {
+          banner.innerHTML = '<strong>Interested in the ' + planLabel + ' plan.</strong> Fill out the form below — we will tailor the demo to that tier.';
+        }
+        formEl.insertBefore(banner, formEl.firstChild);
+      }
+
+      // Pre-pend intent metadata into the notes field so sales sees it on the email
+      const notes = document.querySelector('textarea[name="notes"]');
+      if (notes) {
+        const tag = '[' + (intent ? 'intent=' + intent : '') + (intent && plan ? ' ' : '') + (plan ? 'plan=' + plan : '') + ']';
+        notes.value = tag + (notes.value ? '\n\n' + notes.value : '\n');
+      }
+
+      // Map plan tier → reasonable default volume bucket (visitor can change it)
+      const volumeSelect = document.querySelector('select[name="volume"]');
+      if (volumeSelect && plan) {
+        const planToVolume = { solo: '< 50', growth: '50–250', professional: '250–1,000', enterprise: '1,000–5,000' };
+        const target = planToVolume[plan.toLowerCase()];
+        if (target) {
+          for (const opt of volumeSelect.options) {
+            if (opt.text === target) { volumeSelect.value = opt.value || opt.text; break; }
+          }
+        }
+      }
+    })();
+
+    document.getElementById('demo-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      try {
+        const res = await fetch('https://api.logisticsprizm.com/api/v1/public/demo-request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) {
+          throw new Error('http_' + res.status);
+        }
+
+        form.innerHTML = '<div class="text-center py-12"><div class="text-5xl mb-4">✓</div><h3 class="text-2xl font-bold text-navy-900">Request received.</h3><p class="mt-3 text-navy-900/70 max-w-sm mx-auto">A member of the team will reach out within one business day to confirm your demo window and scope the sandbox.</p></div>';
+      } catch (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request my demo →';
+        }
+        let warn = form.querySelector('[data-form-error]');
+        if (!warn) {
+          warn = document.createElement('p');
+          warn.setAttribute('data-form-error', '');
+          warn.className = 'text-sm text-red-600 text-center';
+          form.appendChild(warn);
+        }
+        warn.textContent = "We couldn't submit that — please try again, or email demos@logisticsprizm.com directly.";
+      }
+    });
+  </script>
+</BaseLayout>

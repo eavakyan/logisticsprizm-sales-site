@@ -1,0 +1,134 @@
+---
+import { APP_LINKS } from '@/lib/links';
+const tiers = [
+  {
+    name: 'Solo',
+    price: '$149',
+    annual: '$119/mo billed annually',
+    tagline: 'For independent forwarders and owner-operators.',
+    features: [
+      '1 user',
+      '50 quotes / month',
+      'AI quote engine',
+      'Live carrier tracking',
+      'Customer portal',
+      'Email support',
+    ],
+    cta: { label: 'Start free trial', href: `${APP_LINKS.trial}&tier=solo` },
+    highlighted: false,
+  },
+  {
+    name: 'Growth',
+    price: '$399',
+    annual: '$319/mo billed annually',
+    tagline: 'For teams of 3–10 — the sweet spot.',
+    features: [
+      '10 users',
+      '500 quotes / month',
+      'Invoice reconciliation',
+      'D&D alerting',
+      'Lead scoring (6-factor)',
+      'Financials module',
+      'Priority support',
+    ],
+    cta: { label: 'Start free trial', href: `${APP_LINKS.trial}&tier=growth` },
+    highlighted: true,
+  },
+  {
+    name: 'Professional',
+    price: '$899',
+    annual: '$719/mo billed annually',
+    tagline: 'For forwarders moving $25M+ annually.',
+    features: [
+      'Unlimited users',
+      '2,500 quotes / month',
+      'ITAR compliance workflow',
+      'HS code AI + denied-party screening',
+      'Custom fee schedules',
+      'Carrier trust scoring',
+      'Dedicated onboarding',
+    ],
+    cta: { label: 'Book a demo', href: '/request-demo?tier=professional' },
+    highlighted: false,
+  },
+  {
+    name: 'Enterprise',
+    price: '$2,499',
+    annual: '$1,999/mo billed annually',
+    tagline: 'For defense primes, multi-entity holdings, and high-volume NVOCCs.',
+    features: [
+      'Everything in Professional',
+      'Unlimited quotes',
+      'On-prem AI option (Ollama)',
+      'Custom SLA + 24/7 support',
+      'Dedicated CSM',
+      'Single-sign-on (SAML)',
+      'White-label customer portal',
+    ],
+    cta: { label: 'Talk to sales', href: '/request-demo?tier=enterprise' },
+    highlighted: false,
+  },
+];
+---
+<section id="pricing" class="bg-white py-24 md:py-32 border-y border-black/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl">
+      <p class="eyebrow reveal">Pricing without the sales-call ritual</p>
+      <h2 class="mt-3 text-h1 font-bold text-navy-900 reveal">
+        Four plans.<br/>
+        <span class="gradient-amber">No implementation fees.</span>
+      </h2>
+      <p class="mt-5 text-lg text-navy-900/75 reveal">
+        CargoWise will quote you $5,000/month and six months of onboarding before you&#39;ve moved a single
+        box. We post our prices, we bill monthly, and the Founding Customer discount of
+        <strong>40% off your first year</strong> runs through Q3 2026.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {tiers.map(t => (
+        <article class:list={[
+          'rounded-2xl p-7 flex flex-col reveal',
+          t.highlighted
+            ? 'bg-navy-900 text-white ring-2 ring-prizm-500 shadow-lg -translate-y-1'
+            : 'bg-white border border-black/10'
+        ]}>
+          {t.highlighted && (
+            <span class="inline-block self-start mb-4 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded bg-prizm-500 text-white">Most popular</span>
+          )}
+          <h3 class={t.highlighted ? 'text-2xl font-bold' : 'text-2xl font-bold text-navy-900'}>{t.name}</h3>
+          <p class:list={[t.highlighted ? 'mt-1 text-sm text-white/70' : 'mt-1 text-sm text-navy-900/60']}>{t.tagline}</p>
+          <div class="mt-5">
+            <span class={t.highlighted ? 'text-4xl font-bold' : 'text-4xl font-bold text-navy-900'}>{t.price}</span>
+            <span class={t.highlighted ? 'text-white/60 ml-1' : 'text-navy-900/60 ml-1'}>/mo</span>
+          </div>
+          <p class:list={[t.highlighted ? 'mt-1 text-xs text-prizm-300' : 'mt-1 text-xs text-prizm-600', 'font-mono']}>{t.annual}</p>
+
+          <ul class="mt-6 space-y-2 text-sm flex-1">
+            {t.features.map(f => (
+              <li class="flex gap-2">
+                <svg class:list={[t.highlighted ? 'text-prizm-400' : 'text-prizm-500', 'shrink-0 mt-0.5']} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class={t.highlighted ? 'text-white/85' : 'text-navy-900/80'}>{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={t.cta.href}
+            class:list={[
+              'mt-7 inline-flex justify-center items-center gap-2 px-4 py-3 rounded-lg font-semibold transition-colors',
+              t.highlighted
+                ? 'bg-prizm-500 text-white hover:bg-prizm-600'
+                : 'bg-navy-900 text-white hover:bg-navy-800'
+            ]}
+          >{t.cta.label}<span aria-hidden>→</span></a>
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-10 text-center text-sm text-navy-900/60 reveal">
+      Consulting &amp; custom services available on top of every plan.
+      <a href="/pricing" class="text-prizm-600 font-semibold hover:text-prizm-700">See full comparison →</a>
+    </p>
+  </div>
+</section>

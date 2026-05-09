@@ -1,0 +1,22 @@
+{
+  "name": "@logisticsprizm/sales-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public sales site for logisticsprizm.com",
+  "scripts": {
+    "dev": "astro dev --port 4500",
+    "start": "astro dev --port 4500",
+    "build": "astro build",
+    "preview": "astro preview --port 4500",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.16.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

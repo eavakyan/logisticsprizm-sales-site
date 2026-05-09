@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LogisticsPrizm — Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #0d0f1a; overflow: hidden; color: #fff; }
+  #root { position: fixed; inset: 0; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  /* Reduce motion fallback */
+  @media (prefers-reduced-motion: reduce) {
+    #root > * { animation: none !important; transition: none !important; }
+  }
+
+  /* Thin auto-replay cue at bottom so viewers realize the video loops */
+  #replay-cue {
+    position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; color: rgba(255,255,255,0.38);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    pointer-events: none; opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  #replay-cue.visible { opacity: 1; }
+</style>
+</head>
+<body>
+  <div id="root" data-video-root data-screen-label="t=0s"></div>
+  <div id="replay-cue">looping · 74s presentation</div>
+
+  <!-- React + Babel standalone runtime (design bundle format). ~250KB once, cached. -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="/media/animations.jsx" data-presets="react"></script>
+  <script type="text/babel" src="/media/scenes.jsx" data-presets="react"></script>
+
+  <script type="text/babel" data-presets="react">
+    // Show the loop cue after the first pass completes
+    setTimeout(() => {
+      const cue = document.getElementById('replay-cue');
+      if (cue) cue.classList.add('visible');
+    }, 74_500);
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<LogisticsPrizmVideo/>);
+  </script>
+</body>
+</html>
