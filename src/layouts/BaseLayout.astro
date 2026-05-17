@@ -1,4 +1,7 @@
 ---
+import '@fontsource-variable/inter';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/600.css';
 import '@/styles/global.css';
 import Navbar from '@/components/Navbar.astro';
 import Footer from '@/components/Footer.astro';
@@ -9,6 +12,7 @@ interface Props {
   image?: string;
   canonical?: string;
   noIndex?: boolean;
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
 const {
@@ -17,6 +21,7 @@ const {
   image = '/og-image.png',
   canonical,
   noIndex = false,
+  breadcrumbs,
 } = Astro.props;
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
@@ -39,7 +44,11 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site).toString()} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="LogisticsPrizm" />
+    <meta name="theme-color" content="#FF8C00" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F1B2D" media="(prefers-color-scheme: dark)" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -47,14 +56,6 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.site).toString()} />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -75,6 +76,50 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
         offerCount: '4',
       },
     })} />
+
+    <!-- Structured data: Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'LogisticsPrizm',
+      legalName: 'VUGA Enterprises LLC',
+      url: 'https://logisticsprizm.com',
+      logo: 'https://logisticsprizm.com/og-image.png',
+      description: 'AI-first TMS for mid-market freight forwarders, 3PLs, NVOCCs, and customs brokers.',
+      parentOrganization: {
+        '@type': 'Organization',
+        name: 'VUGA Enterprises LLC',
+        url: 'https://vugagroup.com',
+      },
+      contactPoint: [{
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: 'sales@logisticsprizm.com',
+        areaServed: 'US',
+        availableLanguage: 'en',
+      }],
+    })} />
+
+    <!-- Structured data: WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'LogisticsPrizm',
+      url: 'https://logisticsprizm.com',
+    })} />
+
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.map((b, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: b.name,
+          item: b.url,
+        })),
+      })} />
+    )}
   </head>
   <body class="min-h-screen bg-surface-50 text-navy-900 antialiased">
     <Navbar />

@@ -20,7 +20,7 @@ html {
 body {
   background: #FAFAF8;
   color: #0F1B2D;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
   font-feature-settings: 'ss01', 'cv11';
 }
 

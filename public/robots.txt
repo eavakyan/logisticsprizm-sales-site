@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /*?intent=
+Disallow: /*?tier=
+Disallow: /*?plan=
+Disallow: /*?calc=
 
 Sitemap: https://logisticsprizm.com/sitemap-index.xml

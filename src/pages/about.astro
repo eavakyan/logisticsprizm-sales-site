@@ -1,9 +1,17 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Founders from '@/components/sections/Founders.astro';
 import FounderLetter from '@/components/sections/FounderLetter.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 ---
-<BaseLayout title="About LogisticsPrizm" description="An independent team building the AI-first TMS the mid-market has been waiting for.">
+<BaseLayout
+  title="About LogisticsPrizm"
+  description="An independent team building the AI-first TMS the mid-market has been waiting for."
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'About', url: 'https://logisticsprizm.com/about' },
+  ]}
+>
   <section class="pt-24 pb-16 bg-surface-50">
     <div class="max-w-3xl mx-auto px-6">
       <p class="eyebrow">About</p>
@@ -16,8 +24,14 @@ import FinalCTA from '@/components/sections/FinalCTA.astro';
       <p class="mt-6 text-sm text-navy-900/60 max-w-prose">
         LogisticsPrizm is a trade name (DBA) of <strong>VUGA Enterprises LLC</strong>.
       </p>
+      <p class="mt-6 text-base text-navy-900/75 max-w-prose">
+        Browse our <a href="/pricing" class="text-prizm-600 font-semibold hover:underline">transparent pricing</a>,
+        read how we approach <a href="/itar" class="text-prizm-600 font-semibold hover:underline">ITAR-ready compliance</a>,
+        or <a href="/contact" class="text-prizm-600 font-semibold hover:underline">contact the team</a> directly.
+      </p>
     </div>
   </section>
+  <Founders />
   <FounderLetter />
   <FinalCTA />
 </BaseLayout>

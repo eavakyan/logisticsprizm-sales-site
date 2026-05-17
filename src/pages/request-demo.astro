@@ -2,8 +2,12 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 <BaseLayout
-  title="Book a LogisticsPrizm demo"
-  description="20 minutes. Your lanes, your carriers, your rate cards — loaded into a sandbox so you see the product against your own data."
+  title="Book a demo or start a free trial — LogisticsPrizm"
+  description="A 20-minute walkthrough of LogisticsPrizm's AI quoting, tracking, invoice reconciliation, and ITAR-ready workflows. Built for freight forwarders, 3PLs, NVOCCs, and customs brokers. No credit card."
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Request a demo', url: 'https://logisticsprizm.com/request-demo' },
+  ]}
 >
   <section class="bg-surface-50 py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12">

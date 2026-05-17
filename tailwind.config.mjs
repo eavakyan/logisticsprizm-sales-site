@@ -37,9 +37,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         // Editorial scale

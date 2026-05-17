@@ -1,0 +1,82 @@
+---
+// Leadership section for the About page. Two founders, square portraits, short bios.
+// Adds Person + Organization JSON-LD so search engines understand the founder team
+// and the VUGA Enterprises LLC parent relationship.
+
+const founders = [
+  {
+    name: 'Victoria Unikel',
+    role: 'Co-Founder & President',
+    image: '/img/founders/victoria-unikel.jpg',
+    alt: 'Victoria Unikel, Co-Founder & President of VUGA Enterprises LLC',
+    width: 700,
+    height: 666,
+    bio: 'Award-winning celebrity artist and visionary entrepreneur with 25+ years building global media empires and iconic brands. Recognized by Forbes as a Media Mogul, Victoria has transformed VUGA Group into a diversified powerhouse with potential reach of one billion people worldwide across its platforms. She holds several entertainment intellectual properties — including the original Exorcista universe — cementing her legacy as a prolific creator. Her rare combination of artistic vision and business acumen has built an ecosystem where creativity drives billion-dollar industries.',
+  },
+  {
+    name: 'Gene Avakyan',
+    role: 'Co-Founder & CEO',
+    image: '/img/founders/gene-avakyan.jpg',
+    alt: 'Gene Avakyan, Co-Founder & CEO of LogisticsPrizm',
+    width: 800,
+    height: 878,
+    bio: "Aerospace engineer and technology strategist with 30 years architecting enterprise systems that move billions in transactions. UCLA Aerospace Engineering, Pepperdine MBA. A member of InfraGard — the FBI–private-sector partnership protecting U.S. critical infrastructure — Gene brings national-security-level rigor to everything he builds. He engineered procurement platforms managing $13B+ in contracts for the City of Los Angeles and the FAA, then brought that systems-thinking discipline to VUGA Group's technology portfolio, where he scales SaaS platforms serving legal, healthcare, public safety, and now logistics.",
+  },
+];
+
+const siteUrl = 'https://logisticsprizm.com';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': founders.map((f) => ({
+    '@type': 'Person',
+    name: f.name,
+    jobTitle: f.role,
+    image: `${siteUrl}${f.image}`,
+    worksFor: {
+      '@type': 'Organization',
+      name: 'LogisticsPrizm',
+      url: siteUrl,
+      parentOrganization: {
+        '@type': 'Organization',
+        name: 'VUGA Enterprises LLC',
+      },
+    },
+  })),
+};
+---
+<section class="bg-white py-20 md:py-24 border-t border-black/5">
+  <div class="max-w-5xl mx-auto px-6 reveal">
+    <p class="eyebrow">Leadership</p>
+    <h2 class="mt-3 text-h2 font-bold text-navy-900">Meet the founders.</h2>
+    <p class="mt-5 text-lg text-navy-900/75 max-w-2xl">
+      LogisticsPrizm is built by operators who have shipped enterprise software at national scale —
+      and who chose mid-market logistics on purpose.
+    </p>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-10 md:gap-12">
+      {founders.map((f) => (
+        <article class="flex flex-col">
+          <div class="overflow-hidden rounded-2xl bg-surface-100 aspect-square">
+            <img
+              src={f.image}
+              alt={f.alt}
+              width={f.width}
+              height={f.height}
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="mt-6">
+            <div class="text-sm text-prizm-600 font-semibold uppercase tracking-wide">{f.role}</div>
+            <h3 class="mt-1 text-xl font-bold text-navy-900">{f.name}</h3>
+            <p class="mt-4 text-base text-navy-900/80 leading-relaxed">{f.bio}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</section>
