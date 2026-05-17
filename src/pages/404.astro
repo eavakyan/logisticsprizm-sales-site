@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { CALENDLY_URL } from '@/lib/links';
 ---
 <BaseLayout
   title="Page not found — LogisticsPrizm"
@@ -43,7 +44,9 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           <p class="mt-2 text-sm text-navy-900/65">Built in, not bolted on.</p>
         </a>
         <a
-          href="/request-demo"
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener"
           class="rounded-xl border border-black/10 bg-white p-6 hover:border-prizm-500 hover:shadow-md transition-all"
         >
           <div class="font-mono text-xs text-prizm-600 uppercase tracking-wider">Book a demo</div>

@@ -1,0 +1,178 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL } from '@/lib/links';
+
+const title = 'AI Freight Quoting Software — Generate Quotes in 32 Seconds | LogisticsPrizm';
+const description = 'Replace manual freight quoting with AI. Generate accurate freight quotes in 32 seconds using historical rates, carrier data, and vector similarity search.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Features', url: 'https://logisticsprizm.com/features' },
+    { name: 'AI Freight Quoting', url: 'https://logisticsprizm.com/features/ai-freight-quoting' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'LogisticsPrizm AI Freight Quoting',
+    description: 'AI-powered freight quote generation that produces accurate quotes in 32 seconds using historical rates, carrier data, and vector similarity search.',
+    provider: { '@type': 'Organization', name: 'LogisticsPrizm' },
+    serviceType: 'Freight Quoting Software',
+    areaServed: 'Worldwide',
+    url: 'https://logisticsprizm.com/features/ai-freight-quoting',
+  })} />
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 bg-surface-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">Feature · AI Quote Engine</p>
+      <h1 class="mt-3 text-h1 font-bold text-navy-900">Generate freight quotes in <span class="gradient-amber">32 seconds</span>.</h1>
+      <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+        Stop spending 30–60 minutes on manual rate lookups. Our AI quote engine analyzes historical rates,
+        carrier data, and market conditions to deliver accurate freight quotes instantly.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm">
+          Book my demo <span aria-hidden>→</span>
+        </a>
+        <a href="/features/shipment-tracking" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-black/10 text-navy-900 font-semibold hover:bg-white transition-colors">
+          Explore more features
+        </a>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <div class="text-3xl lg:text-4xl font-extrabold text-prizm-600">32s</div>
+          <div class="text-sm text-navy-900/70 mt-1">Average quote time</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-extrabold text-navy-900">97%</div>
+          <div class="text-sm text-navy-900/70 mt-1">Pricing accuracy</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-extrabold text-navy-900">4x</div>
+          <div class="text-sm text-navy-900/70 mt-1">More quotes per day</div>
+        </div>
+        <div>
+          <div class="text-3xl lg:text-4xl font-extrabold text-navy-900">56%</div>
+          <div class="text-sm text-navy-900/70 mt-1">Higher win rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">How it works</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Three steps from shipment details to accurate quote.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">No rate-sheet hunting, no manual calculations.</p>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <div class="w-10 h-10 rounded-lg bg-prizm-50 text-prizm-600 flex items-center justify-center font-bold mb-5">1</div>
+          <h3 class="text-lg font-semibold text-navy-900">Input shipment details</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Enter origin, destination, cargo type, weight, and dimensions. The smart form auto-completes common routes and suggests classifications.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <div class="w-10 h-10 rounded-lg bg-prizm-50 text-prizm-600 flex items-center justify-center font-bold mb-5">2</div>
+          <h3 class="text-lg font-semibold text-navy-900">AI analyzes rates</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">The engine searches historical quotes via vector similarity, cross-references carrier rate cards, and factors current market conditions into a competitive price.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <div class="w-10 h-10 rounded-lg bg-prizm-50 text-prizm-600 flex items-center justify-center font-bold mb-5">3</div>
+          <h3 class="text-lg font-semibold text-navy-900">Get an accurate quote</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Detailed line-item breakdown with margin suggestions and confidence scores. Send it to your customer in one click — or adjust as needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits -->
+  <section class="bg-surface-50 py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Why AI-powered quoting wins</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Every minute on manual quoting is a minute not closing deals.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-6">
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">32-second quotes</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Industry average for manual quoting is 30–60 minutes per request. Our AI generates accurate quotes in 32 seconds, letting sales handle 4× more RFQs per day.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">97% pricing accuracy</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Vector similarity surfaces the most relevant historical quotes, while carrier rate cards and market data keep pricing competitive and profitable.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Gets smarter over time</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Every quote you generate and every deal you close feeds back into the model. The more you use it, the more tailored your quotes become to your lanes and customers.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">All transport modes</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">LTL, FTL, ocean FCL/LCL, air freight, intermodal — one engine handles every mode. No switching tools or maintaining separate spreadsheets per service type.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Manual vs. AI</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Why leading freight forwarders are switching.</h2>
+
+      <div class="mt-10 rounded-2xl border border-black/10 overflow-hidden reveal">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-navy-900 text-white">
+                <th class="text-left font-semibold px-6 py-4 w-1/3">Metric</th>
+                <th class="text-center font-semibold px-6 py-4 w-1/3 text-white/70">Manual process</th>
+                <th class="text-center font-semibold px-6 py-4 w-1/3 text-prizm-400">LogisticsPrizm AI</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-black/5 bg-white">
+              <tr><td class="px-6 py-4 font-medium text-navy-900">Time per quote</td><td class="px-6 py-4 text-navy-900/70 text-center">30–60 minutes</td><td class="px-6 py-4 text-center font-semibold text-navy-900">32 seconds</td></tr>
+              <tr class="bg-surface-50"><td class="px-6 py-4 font-medium text-navy-900">Quotes per day</td><td class="px-6 py-4 text-navy-900/70 text-center">8–12</td><td class="px-6 py-4 text-center font-semibold text-navy-900">40–50+</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-navy-900">Pricing accuracy</td><td class="px-6 py-4 text-navy-900/70 text-center">Varies by rep</td><td class="px-6 py-4 text-center font-semibold text-navy-900">97% consistent</td></tr>
+              <tr class="bg-surface-50"><td class="px-6 py-4 font-medium text-navy-900">Rate data sources</td><td class="px-6 py-4 text-navy-900/70 text-center">Spreadsheets, emails</td><td class="px-6 py-4 text-center font-semibold text-navy-900">Historical + carrier + market</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-navy-900">Learning capability</td><td class="px-6 py-4 text-navy-900/70 text-center">None</td><td class="px-6 py-4 text-center font-semibold text-navy-900">Improves with every quote</td></tr>
+              <tr class="bg-surface-50"><td class="px-6 py-4 font-medium text-navy-900">Transport modes</td><td class="px-6 py-4 text-navy-900/70 text-center">Per-mode tools</td><td class="px-6 py-4 text-center font-semibold text-navy-900">All modes, one engine</td></tr>
+              <tr><td class="px-6 py-4 font-medium text-navy-900">Off-hours coverage</td><td class="px-6 py-4 text-navy-900/70 text-center">None</td><td class="px-6 py-4 text-center font-semibold text-navy-900">24/7 instant quotes</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="bg-surface-50 py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Better together</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">AI quoting works best with</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <a href="/features/shipment-tracking" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Shipment tracking</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Track every shipment from quote acceptance through delivery with real-time visibility.</p>
+        </a>
+        <a href="/features/logistics-crm" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Logistics CRM</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Manage customer relationships and track the full pipeline from lead to booked shipment.</p>
+        </a>
+        <a href="/itar" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">ITAR compliance</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Handle defense-related shipments with local AI processing and a full audit trail.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

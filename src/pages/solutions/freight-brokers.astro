@@ -1,0 +1,140 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL } from '@/lib/links';
+
+const title = 'Freight Broker Software | AI Quoting in 32 Seconds';
+const description = 'Win more loads with AI-powered freight quoting, CRM with lead scoring, and carrier management. LogisticsPrizm helps freight brokers quote faster and close more deals.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Solutions', url: 'https://logisticsprizm.com/solutions' },
+    { name: 'Freight Brokers', url: 'https://logisticsprizm.com/solutions/freight-brokers' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'LogisticsPrizm Freight Broker Platform',
+    description: 'AI-powered freight broker software with 32-second quoting, shipper CRM with lead scoring, carrier management, margin analytics, and real-time tracking.',
+    provider: { '@type': 'Organization', name: 'LogisticsPrizm' },
+    serviceType: 'Freight Broker Software',
+    areaServed: 'Worldwide',
+    url: 'https://logisticsprizm.com/solutions/freight-brokers',
+  })} />
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 bg-surface-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">Solution · Freight brokers</p>
+      <h1 class="mt-3 text-h1 font-bold text-navy-900">
+        AI-powered software for <span class="gradient-amber">freight brokers</span>.
+      </h1>
+      <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+        In freight brokerage, the first quote wins. LogisticsPrizm gives you AI-powered quoting in 32 seconds,
+        shipper CRM with lead scoring, and carrier rate shopping — so you close more deals before your
+        competition even opens a spreadsheet.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm">
+          Get a custom quote <span aria-hidden>→</span>
+        </a>
+        <a href="#features" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-black/10 text-navy-900 font-semibold hover:bg-white transition-colors">
+          See features
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Speed kills in brokerage</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Every minute you spend building a quote is a minute your competitor is already sending theirs.</h2>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Slow quoting costs loads</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">You're checking multiple carrier portals, comparing rates in spreadsheets, and manually building quotes. By the time you respond, the shipper already has three other prices.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Pipeline chaos</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Shipper relationships live in sticky notes, email threads, and your head. You're losing track of who needs follow-up, what lanes they ship, and when their contracts expire.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Margin blindness</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">You're moving loads but can't see profitability per lane, per shipper, or per carrier. Some lanes eat your margin alive while you don't realize which ones drive profit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section id="features" class="bg-surface-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">Quote faster. Win more. See everything.</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Built for the pace of freight brokerage.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/features/ai-freight-quoting" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">32-second AI quoting</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">The killer feature for brokers. AI analyzes historical rates, carrier rate cards, and market conditions to generate accurate quotes in 32 seconds. First quote wins — make sure it's yours.</p>
+        </a>
+        <a href="/features/logistics-crm" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Shipper CRM & lead scoring</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">AI scores every lead based on shipping volume, industry, engagement, and revenue potential. Focus your energy on the shippers that will become your best accounts.</p>
+        </a>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Carrier rate shopping</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Compare rates across your entire carrier network instantly. Performance scorecards, capacity tracking, and relationship management so you always book the right carrier.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Margin analytics per lane</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">See profitability per lane, per shipper, and per carrier in real time. Identify your most and least profitable routes so you can price smarter and negotiate better.</p>
+        </div>
+        <a href="/features/shipment-tracking" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Real-time tracking</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Proactive shipment updates for your shippers. Automated exception alerts and ETA predictions mean your customers hear from you before problems escalate.</p>
+        </a>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Pipeline & deal tracking</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Visualize your entire sales pipeline from prospect to booked load. Automated follow-ups, contract renewal reminders, and deal stage tracking keep revenue flowing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speed wins -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Every minute of quoting delay costs revenue</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">How LogisticsPrizm puts you first in every inbox.</h2>
+
+      <div class="mt-10 rounded-2xl bg-navy-900 text-white p-10 md:p-12">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-extrabold text-prizm-400 mb-2">32s</div>
+            <div class="text-base font-semibold">AI quotes</div>
+            <p class="mt-2 text-sm text-white/70">Generate accurate, margin-optimized quotes faster than any competitor.</p>
+          </div>
+          <div>
+            <div class="text-4xl font-extrabold text-prizm-400 mb-2">97%</div>
+            <div class="text-base font-semibold">Pricing accuracy</div>
+            <p class="mt-2 text-sm text-white/70">AI learns from historical rates and market data to deliver quotes that protect margins and win loads.</p>
+          </div>
+          <div>
+            <div class="text-4xl font-extrabold text-prizm-400 mb-2">3x</div>
+            <div class="text-base font-semibold">Pipeline conversion</div>
+            <p class="mt-2 text-sm text-white/70">AI lead scoring identifies your highest-value prospects so your team focuses on deals that close.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

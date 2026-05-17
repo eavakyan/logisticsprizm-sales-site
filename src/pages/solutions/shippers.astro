@@ -1,0 +1,138 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL } from '@/lib/links';
+
+const title = 'Shipping Software for Manufacturers & Distributors | AI-Powered TMS';
+const description = 'Compare carrier rates in seconds, track every shipment, and cut logistics costs. Enterprise visibility without enterprise complexity for manufacturers and distributors.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Solutions', url: 'https://logisticsprizm.com/solutions' },
+    { name: 'Shippers', url: 'https://logisticsprizm.com/solutions/shippers' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'LogisticsPrizm Shipper Platform',
+    description: 'AI-powered shipping software for manufacturers and distributors with carrier rate comparison, shipment tracking, logistics spend analytics, and ERP/WMS integration.',
+    provider: { '@type': 'Organization', name: 'LogisticsPrizm' },
+    serviceType: 'Transportation Management Software',
+    areaServed: 'Worldwide',
+    url: 'https://logisticsprizm.com/solutions/shippers',
+  })} />
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 bg-surface-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">Solution · Shippers</p>
+      <h1 class="mt-3 text-h1 font-bold text-navy-900">
+        Logistics software for <span class="gradient-amber">manufacturers & distributors</span>.
+      </h1>
+      <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+        You build products and serve customers — not manage freight. LogisticsPrizm gives you enterprise
+        shipping visibility without enterprise complexity. Compare rates, track shipments, and cut logistics
+        costs from one simple platform.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm">
+          Get a custom quote <span aria-hidden>→</span>
+        </a>
+        <a href="#features" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-black/10 text-navy-900 font-semibold hover:bg-white transition-colors">
+          See features
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">You ship daily. You're not a logistics company.</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Stuck between bloated enterprise TMS and manual spreadsheets that break at scale.</h2>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Enterprise TMS overkill</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Traditional TMS platforms cost $100K+ to implement, take 6–12 months to deploy, and require dedicated logistics IT staff. You need freight management, not a second ERP.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Spreadsheet ceiling</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Your shipping spreadsheets worked at 50 orders a week. At 500, they're a liability. No rate comparison, no tracking visibility, no way to identify cost savings across carriers.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Logistics cost blind spots</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">You know your COGS and labor costs to the penny, but shipping? You're guessing. Without spend analytics, you're overpaying carriers and missing consolidation opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section id="features" class="bg-surface-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">Enterprise visibility. Zero complexity.</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Freight tools without the bloat, cost, or implementation timeline of enterprise TMS.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/features/ai-freight-quoting" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">AI rate comparison</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Compare rates across all your carriers in seconds. AI analyzes service levels, transit times, and historical performance to recommend the best option for every shipment.</p>
+        </a>
+        <a href="/features/shipment-tracking" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Shipment visibility</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Track every shipment from pickup to delivery across all carriers in one dashboard. Automated alerts for delays and exceptions so your supply-chain team stays ahead of issues.</p>
+        </a>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Carrier management</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Manage all your carrier relationships, rate agreements, and contracts in one place. Performance tracking ensures you're using the right carriers for the right lanes.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Logistics spend analytics</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">See exactly where your freight dollars go. Spend by carrier, lane, mode, and product line. Identify savings opportunities and track cost-per-shipment trends over time.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">ERP & WMS integration</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Connect to your existing ERP and WMS via API. Shipping data flows automatically between systems — no more re-keying orders or manually updating tracking information.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Customer order tracking</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Give your buyers a self-service portal to track their orders in real time. Reduce "where's my order?" inquiries and improve customer satisfaction with proactive delivery updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Prop -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Enterprise visibility without enterprise complexity</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">One platform replaces your patchwork of spreadsheets, carrier portals, and disconnected tools.</h2>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-3xl font-extrabold text-prizm-600 mb-2">Seconds</div>
+          <div class="text-base font-semibold text-navy-900">Rate comparison</div>
+          <p class="mt-2 text-sm text-navy-900/70">Compare carrier rates instantly across your entire network. No more logging into five different portals.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-3xl font-extrabold text-prizm-600 mb-2">1</div>
+          <div class="text-base font-semibold text-navy-900">Platform replaces 5+</div>
+          <p class="mt-2 text-sm text-navy-900/70">Rate shopping, tracking, carrier management, spend analytics, and customer portal — one login.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-3xl font-extrabold text-prizm-600 mb-2">Weeks</div>
+          <div class="text-base font-semibold text-navy-900">Not months to deploy</div>
+          <p class="mt-2 text-sm text-navy-900/70">Go live in weeks, not the 6–12 months typical of enterprise TMS implementations. No consultants, no IT project, no disruption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

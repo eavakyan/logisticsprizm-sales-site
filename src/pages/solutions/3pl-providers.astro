@@ -1,0 +1,138 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL } from '@/lib/links';
+
+const title = '3PL Software | AI-Powered Platform for Third-Party Logistics Providers';
+const description = 'Manage multiple clients, automate freight quoting, and give customers real-time visibility. LogisticsPrizm helps 3PLs quote in 32 seconds and scale operations.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Solutions', url: 'https://logisticsprizm.com/solutions' },
+    { name: '3PL Providers', url: 'https://logisticsprizm.com/solutions/3pl-providers' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'LogisticsPrizm 3PL Platform',
+    description: 'AI-powered third-party logistics software with multi-tenant architecture, customer portals, AI quoting, carrier management, and per-client analytics.',
+    provider: { '@type': 'Organization', name: 'LogisticsPrizm' },
+    serviceType: 'Third-Party Logistics Software',
+    areaServed: 'Worldwide',
+    url: 'https://logisticsprizm.com/solutions/3pl-providers',
+  })} />
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 bg-surface-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">Solution · 3PL providers</p>
+      <h1 class="mt-3 text-h1 font-bold text-navy-900">
+        The AI-powered platform built for <span class="gradient-amber">3PL providers</span>.
+      </h1>
+      <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+        Manage multiple clients, automate freight quoting across accounts, and give every customer their own
+        real-time portal — all from one platform that scales with your operation.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm">
+          Get a custom quote <span aria-hidden>→</span>
+        </a>
+        <a href="#features" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-black/10 text-navy-900 font-semibold hover:bg-white transition-colors">
+          See features
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">The 3PL provider's challenge</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Every client has different carriers, SLAs, pricing, and reports.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">Your tools were built for one company, not ten.</p>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Multi-client complexity</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Client A uses FedEx and UPS with net-30 terms. Client B prefers ocean freight with weekly rate updates. You're managing it all in spreadsheets and separate logins.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Scaling bottleneck</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Adding a new client means weeks of setup, custom processes, and more manual work. Your headcount grows linearly with your client count.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Client visibility gaps</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Clients call and email for tracking updates. You spend hours fielding "where's my shipment?" queries instead of growing your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section id="features" class="bg-surface-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">One platform. Every client.</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Multi-tenant architecture, designed for 3PL providers.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Multi-tenant architecture</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Separate data, carrier networks, rate cards, and SLAs per client. Add new accounts in minutes, not weeks. Full data isolation with unified management.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">White-label customer portal</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Every client gets a branded portal with self-service tracking, document access, and reporting. Eliminate "where's my shipment?" calls overnight.</p>
+        </div>
+        <a href="/features/ai-freight-quoting" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">AI quoting across clients</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Generate 32-second quotes using each client's specific carrier rates and contracts. AI learns pricing patterns per account for increasingly accurate margins.</p>
+        </a>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Carrier management hub</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Manage your entire carrier network across all clients. Performance scorecards, rate agreements, API integrations, and capacity tracking in one central hub.</p>
+        </div>
+        <a href="/features/shipment-tracking" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Real-time tracking</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Unified tracking across all clients and carriers. Automated exception alerts, ETA predictions, and proactive client notifications.</p>
+        </a>
+        <a href="/features/logistics-crm" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Per-client analytics</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Profitability dashboards per client, lane analysis, carrier performance by account, and SLA compliance tracking. Know exactly which accounts drive margin.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Scale without scaling headcount</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Grow your client base without proportionally growing your team.</h2>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-2">3x</div>
+          <div class="text-base font-semibold text-navy-900">More clients</div>
+          <p class="mt-2 text-sm text-navy-900/70">Serve three times more clients with the same team using automated workflows and self-service portals.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-2">32s</div>
+          <div class="text-base font-semibold text-navy-900">Quotes per client</div>
+          <p class="mt-2 text-sm text-navy-900/70">Generate accurate quotes in 32 seconds using each client's carrier rates and contract terms.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-2">24/7</div>
+          <div class="text-base font-semibold text-navy-900">Customer portal</div>
+          <p class="mt-2 text-sm text-navy-900/70">Real-time self-service portal for every client. Tracking, documents, and reporting without a phone call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

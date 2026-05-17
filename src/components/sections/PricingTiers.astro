@@ -1,5 +1,5 @@
 ---
-import { APP_LINKS } from '@/lib/links';
+import { APP_LINKS, CALENDLY_URL } from '@/lib/links';
 const tiers = [
   {
     name: 'Solo',
@@ -14,7 +14,7 @@ const tiers = [
       'Customer portal',
       'Email support',
     ],
-    cta: { label: 'Start free trial', href: `${APP_LINKS.trial}&tier=solo` },
+    cta: { label: 'Start free trial', href: APP_LINKS.trial, external: true },
     highlighted: false,
   },
   {
@@ -31,7 +31,7 @@ const tiers = [
       'Financials module',
       'Priority support',
     ],
-    cta: { label: 'Start free trial', href: `${APP_LINKS.trial}&tier=growth` },
+    cta: { label: 'Start free trial', href: APP_LINKS.trial, external: true },
     highlighted: true,
   },
   {
@@ -48,7 +48,7 @@ const tiers = [
       'Carrier trust scoring',
       'Dedicated onboarding',
     ],
-    cta: { label: 'Book a demo', href: '/request-demo?tier=professional' },
+    cta: { label: 'Book a demo', href: CALENDLY_URL, external: true },
     highlighted: false,
   },
   {
@@ -65,7 +65,7 @@ const tiers = [
       'Single-sign-on (SAML)',
       'White-label customer portal',
     ],
-    cta: { label: 'Talk to sales', href: '/request-demo?tier=enterprise' },
+    cta: { label: 'Talk to sales', href: '/request-demo?tier=enterprise', external: false },
     highlighted: false,
   },
 ];
@@ -115,6 +115,8 @@ const tiers = [
 
           <a
             href={t.cta.href}
+            target={t.cta.external ? '_blank' : undefined}
+            rel={t.cta.external ? 'noopener' : undefined}
             class:list={[
               'mt-7 inline-flex justify-center items-center gap-2 px-4 py-3 rounded-lg font-semibold transition-colors',
               t.highlighted

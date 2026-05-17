@@ -1,0 +1,532 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL, API_BASE, CONTACT } from '@/lib/links';
+
+const title = 'Custom Solutions & Consulting — Your Technology Partner | LogisticsPrizm';
+const description = 'LogisticsPrizm is more than software. Implementation, custom development, strategic consulting, and managed services for freight and logistics operations.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Custom & consulting', url: 'https://logisticsprizm.com/custom' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'LogisticsPrizm Custom Solutions & Consulting',
+    description: 'Custom-configured AI logistics platform with implementation services, custom development, strategic consulting, and managed services for freight operations.',
+    provider: { '@type': 'Organization', name: 'LogisticsPrizm' },
+    serviceType: 'Logistics Technology Consulting',
+    areaServed: 'Worldwide',
+    url: 'https://logisticsprizm.com/custom',
+  })} />
+
+  <!-- Hero (uses navy treatment — this page earns it with a bold pitch) -->
+  <section class="pt-24 pb-14 bg-navy-900 text-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow text-prizm-400">Technology partner, not just software</p>
+      <h1 class="mt-3 text-h1 font-bold">
+        Your freight operation deserves a <span class="gradient-amber">true technology partner</span>.
+      </h1>
+      <p class="mt-5 text-lg text-white/85 max-w-prose">
+        LogisticsPrizm is not just software you subscribe to. We provide implementation, custom development,
+        strategic consulting, and ongoing managed services to transform your logistics operation end-to-end.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="#assessment" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-lg shadow-prizm-500/25">
+          Get your custom quote <span aria-hidden>→</span>
+        </a>
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-white/10 backdrop-blur text-white font-semibold hover:bg-white/20 transition-colors border border-white/15">
+          Book a strategy call
+        </a>
+        <a href="#services" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg text-white/80 font-medium hover:text-white transition-colors">
+          Explore services →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Partner With Us -->
+  <section class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">Why partner with LogisticsPrizm?</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">We don't disappear after the sale.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">We embed with your team, understand your operation, and continuously optimize your technology investment.</p>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <h3 class="text-base font-semibold text-navy-900">Logistics domain expertise</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Our team understands freight forwarding, not just code. We speak your language — lanes, modes, compliance, and carrier relationships.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <h3 class="text-base font-semibold text-navy-900">End-to-end ownership</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">One partner for strategy, implementation, customization, and support. No finger-pointing between vendors.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <h3 class="text-base font-semibold text-navy-900">AI-first approach</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Deep expertise in AI/ML for logistics — from LLM integration and RAG pipelines to custom model training on your operational data.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <h3 class="text-base font-semibold text-navy-900">Measurable ROI</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">We define success metrics before work begins and track them throughout. Every engagement ties back to revenue, efficiency, or compliance goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Agitation -->
+  <section class="bg-surface-50 py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">The hidden cost of generic software</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Generic logistics software is costing you more than you think.</h2>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Slow quoting</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Your team spends 45+ minutes per quote while competitors respond in seconds. Every delayed quote is a lost shipment.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Compliance gaps</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">ITAR violations carry penalties up to $1M per occurrence. Manual compliance tracking is a ticking time bomb.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Disconnected systems</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">CRM here, TMS there, spreadsheets everywhere. Your data is siloed and your insights are blind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section id="services" class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">Professional services</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Software + services = transformation.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">Four pillars of support to ensure your logistics technology investment delivers real business results.</p>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-6">
+        <!-- Implementation -->
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-8 reveal">
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="text-xl font-bold text-navy-900">Implementation & onboarding</h3>
+            <span class="font-mono text-xs text-prizm-700">$2.5K – $50K</span>
+          </div>
+          <p class="mt-3 text-sm text-navy-900/75 leading-relaxed">From quick-start deployments to full enterprise migrations. We handle data migration, configuration, training, and go-live support.</p>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Quick Start (1–2 weeks)</span><span class="text-navy-900/60 font-mono">$2,500</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Standard (3–4 weeks)</span><span class="text-navy-900/60 font-mono">$7,500</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Full Migration (6–8 weeks)</span><span class="text-navy-900/60 font-mono">$15K – $25K</span></li>
+            <li class="flex justify-between"><span class="text-navy-900/80">Enterprise (8–16 weeks)</span><span class="text-navy-900/60 font-mono">$25K – $50K</span></li>
+          </ul>
+        </div>
+
+        <!-- Custom Development -->
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-8 reveal">
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="text-xl font-bold text-navy-900">Custom development</h3>
+            <span class="font-mono text-xs text-prizm-700">$5K – $150K+</span>
+          </div>
+          <p class="mt-3 text-sm text-navy-900/75 leading-relaxed">Custom integrations, dashboards, workflow automation, and AI/ML models built specifically for your operation.</p>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Single API integration</span><span class="text-navy-900/60 font-mono">$5K – $15K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Custom dashboard / reports</span><span class="text-navy-900/60 font-mono">$8K – $20K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Workflow automation</span><span class="text-navy-900/60 font-mono">$10K – $30K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Full custom module</span><span class="text-navy-900/60 font-mono">$25K – $75K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Enterprise integration suite</span><span class="text-navy-900/60 font-mono">$50K – $150K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">AI/ML custom model</span><span class="text-navy-900/60 font-mono">$30K – $100K</span></li>
+            <li class="flex justify-between pt-1"><span class="text-navy-900/80">Dev retainers</span><span class="text-navy-900/60 font-mono">$3.5K – $23.2K/mo</span></li>
+          </ul>
+        </div>
+
+        <!-- Strategic Consulting -->
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-8 reveal">
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="text-xl font-bold text-navy-900">Strategic consulting</h3>
+            <span class="font-mono text-xs text-prizm-700">$5K – $75K+</span>
+          </div>
+          <p class="mt-3 text-sm text-navy-900/75 leading-relaxed">Expert guidance on technology strategy, process optimization, AI readiness, and compliance. We help you build a roadmap for logistics transformation.</p>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Technology assessment</span><span class="text-navy-900/60 font-mono">$5K – $10K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Process optimization sprint</span><span class="text-navy-900/60 font-mono">$15K – $25K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">AI readiness & data strategy</span><span class="text-navy-900/60 font-mono">$20K – $35K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">ITAR / compliance audit</span><span class="text-navy-900/60 font-mono">$15K – $30K</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Digital transformation roadmap</span><span class="text-navy-900/60 font-mono">$30K – $75K</span></li>
+            <li class="flex justify-between pt-1"><span class="text-navy-900/80">Advisory retainers</span><span class="text-navy-900/60 font-mono">$3K – $18K/mo</span></li>
+          </ul>
+        </div>
+
+        <!-- Managed Services -->
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-8 reveal">
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="text-xl font-bold text-navy-900">Managed services</h3>
+            <span class="font-mono text-xs text-prizm-700">$1.5K – $20K/mo</span>
+          </div>
+          <p class="mt-3 text-sm text-navy-900/75 leading-relaxed">Ongoing platform management, monitoring, optimization, and support so your team can focus on running the business instead of running the software.</p>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Essential</span><span class="text-navy-900/60 font-mono">$1,500/mo</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Business</span><span class="text-navy-900/60 font-mono">$3,500/mo</span></li>
+            <li class="flex justify-between border-b border-black/5 pb-2"><span class="text-navy-900/80">Premium</span><span class="text-navy-900/60 font-mono">$7,500/mo</span></li>
+            <li class="flex justify-between"><span class="text-navy-900/80">Enterprise</span><span class="text-navy-900/60 font-mono">$12K – $20K/mo</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI -->
+  <section class="bg-surface-50 py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">The ROI of switching</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">What you can expect to see.</h2>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="reveal">
+          <div class="text-4xl lg:text-5xl font-extrabold text-prizm-600">85%</div>
+          <p class="mt-3 text-sm text-navy-900/75 leading-relaxed">reduction in quoting time (32 seconds vs 30–60 minutes)</p>
+        </div>
+        <div class="reveal">
+          <div class="text-4xl lg:text-5xl font-extrabold text-prizm-600">$200K+</div>
+          <p class="mt-3 text-sm text-navy-900/75 leading-relaxed">average annual savings from operational efficiency</p>
+        </div>
+        <div class="reveal">
+          <div class="text-4xl lg:text-5xl font-extrabold text-prizm-600">3x</div>
+          <p class="mt-3 text-sm text-navy-900/75 leading-relaxed">faster lead-to-customer conversion with AI scoring</p>
+        </div>
+        <div class="reveal">
+          <div class="text-4xl lg:text-5xl font-extrabold text-prizm-600">100%</div>
+          <p class="mt-3 text-sm text-navy-900/75 leading-relaxed">ITAR audit compliance with automated documentation</p>
+        </div>
+      </div>
+
+      <p class="mt-10 text-center text-navy-900/60 max-w-2xl mx-auto reveal">Want a personalized ROI analysis? We'll calculate your exact savings on a strategy call.</p>
+    </div>
+  </section>
+
+  <!-- Needs Assessment Form -->
+  <section id="assessment" class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow reveal">Custom proposal</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Tell us about your operation.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">Answer a few questions and we'll build a custom proposal covering platform, services, and pricing tailored to your needs.</p>
+
+      <form action={`${API_BASE}/api/v1/leads`} method="POST" class="mt-12 space-y-10">
+
+        <!-- Section 1: Your Operation -->
+        <div class="rounded-2xl bg-surface-50 border border-black/10 p-8">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-9 h-9 rounded-full bg-prizm-500 text-white flex items-center justify-center font-bold">1</div>
+            <h3 class="text-lg font-bold text-navy-900">Your operation</h3>
+          </div>
+
+          <fieldset class="space-y-6">
+            <legend class="text-sm font-semibold text-navy-900 mb-3">What type of logistics operation do you run?</legend>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { v: 'freight_forwarder', l: 'Freight forwarder' },
+                { v: '3pl_provider', l: '3PL provider' },
+                { v: 'customs_broker', l: 'Customs broker' },
+                { v: 'freight_broker', l: 'Freight broker' },
+                { v: 'nvocc', l: 'NVOCC' },
+                { v: 'manufacturer_shipper', l: 'Manufacturer / shipper' },
+                { v: 'defense_contractor', l: 'Defense contractor' },
+                { v: 'other', l: 'Other' },
+              ].map((o) => (
+                <label class="flex items-center gap-3 px-4 py-3 rounded-lg border border-black/10 hover:border-prizm-500/40 cursor-pointer transition-colors bg-white">
+                  <input type="radio" name="operation_type" value={o.v} class="w-4 h-4 accent-prizm-500" />
+                  <span class="text-sm text-navy-900/85">{o.l}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <fieldset class="mt-8">
+            <legend class="text-sm font-semibold text-navy-900 mb-3">Monthly shipment volume?</legend>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { v: 'under_100', l: 'Under 100' },
+                { v: '100_500', l: '100 – 500' },
+                { v: '500_2000', l: '500 – 2,000' },
+                { v: '2000_plus', l: '2,000+' },
+              ].map((o) => (
+                <label class="flex items-center gap-3 px-4 py-3 rounded-lg border border-black/10 hover:border-prizm-500/40 cursor-pointer transition-colors bg-white">
+                  <input type="radio" name="shipment_volume" value={o.v} class="w-4 h-4 accent-prizm-500" />
+                  <span class="text-sm text-navy-900/85">{o.l}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Section 2: Challenges & Services -->
+        <div class="rounded-2xl bg-surface-50 border border-black/10 p-8">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-9 h-9 rounded-full bg-prizm-500 text-white flex items-center justify-center font-bold">2</div>
+            <h3 class="text-lg font-bold text-navy-900">Your challenges & services needed</h3>
+          </div>
+
+          <fieldset class="mb-8">
+            <legend class="text-sm font-semibold text-navy-900 mb-3">What challenges are you facing? (Select all that apply)</legend>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { v: 'slow_quoting', l: 'Slow manual quoting' },
+                { v: 'poor_visibility', l: 'Poor shipment visibility' },
+                { v: 'no_crm', l: 'No CRM / lead management' },
+                { v: 'itar_compliance', l: 'ITAR / compliance requirements' },
+                { v: 'disconnected_tools', l: 'Too many disconnected tools' },
+                { v: 'carrier_rate_shopping', l: 'Carrier rate shopping is painful' },
+                { v: 'custom_integrations', l: 'Need custom integrations' },
+                { v: 'ai_strategy', l: 'AI / digital transformation help' },
+              ].map((o) => (
+                <label class="flex items-center gap-3 px-4 py-3 rounded-lg border border-black/10 hover:border-prizm-500/40 cursor-pointer transition-colors bg-white">
+                  <input type="checkbox" name="challenges" value={o.v} class="w-4 h-4 rounded accent-prizm-500" />
+                  <span class="text-sm text-navy-900/85">{o.l}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="text-sm font-semibold text-navy-900 mb-3">Which services interest you? (Select all that apply)</legend>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { v: 'platform_subscription', l: 'Platform subscription' },
+                { v: 'implementation', l: 'Implementation & onboarding' },
+                { v: 'custom_development', l: 'Custom development' },
+                { v: 'consulting', l: 'Strategic consulting' },
+                { v: 'managed_services', l: 'Managed services' },
+                { v: 'not_sure', l: 'Not sure yet — help me figure it out' },
+              ].map((o) => (
+                <label class="flex items-center gap-3 px-4 py-3 rounded-lg border border-black/10 hover:border-prizm-500/40 cursor-pointer transition-colors bg-white">
+                  <input type="checkbox" name="services" value={o.v} class="w-4 h-4 rounded accent-prizm-500" />
+                  <span class="text-sm text-navy-900/85">{o.l}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Section 3: Your Info -->
+        <div class="rounded-2xl bg-surface-50 border border-black/10 p-8">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-9 h-9 rounded-full bg-prizm-500 text-white flex items-center justify-center font-bold">3</div>
+            <h3 class="text-lg font-bold text-navy-900">Your info</h3>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="full_name" class="block text-sm font-semibold text-navy-900 mb-2">Full name</label>
+              <input type="text" id="full_name" name="full_name" required placeholder="Jane Smith"
+                class="w-full px-4 py-3 rounded-lg border border-black/10 bg-white text-sm text-navy-900 placeholder-navy-900/40 focus:outline-none focus:ring-2 focus:ring-prizm-500/40 focus:border-prizm-500 transition" />
+            </div>
+            <div>
+              <label for="work_email" class="block text-sm font-semibold text-navy-900 mb-2">Work email</label>
+              <input type="email" id="work_email" name="work_email" required placeholder="jane@company.com"
+                class="w-full px-4 py-3 rounded-lg border border-black/10 bg-white text-sm text-navy-900 placeholder-navy-900/40 focus:outline-none focus:ring-2 focus:ring-prizm-500/40 focus:border-prizm-500 transition" />
+            </div>
+            <div>
+              <label for="company_name" class="block text-sm font-semibold text-navy-900 mb-2">Company name</label>
+              <input type="text" id="company_name" name="company_name" required placeholder="Acme Logistics"
+                class="w-full px-4 py-3 rounded-lg border border-black/10 bg-white text-sm text-navy-900 placeholder-navy-900/40 focus:outline-none focus:ring-2 focus:ring-prizm-500/40 focus:border-prizm-500 transition" />
+            </div>
+            <div>
+              <label for="job_title" class="block text-sm font-semibold text-navy-900 mb-2">Job title</label>
+              <input type="text" id="job_title" name="job_title" required placeholder="VP of Operations"
+                class="w-full px-4 py-3 rounded-lg border border-black/10 bg-white text-sm text-navy-900 placeholder-navy-900/40 focus:outline-none focus:ring-2 focus:ring-prizm-500/40 focus:border-prizm-500 transition" />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-navy-900 mb-2">Phone <span class="font-normal text-navy-900/50">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567"
+                class="w-full px-4 py-3 rounded-lg border border-black/10 bg-white text-sm text-navy-900 placeholder-navy-900/40 focus:outline-none focus:ring-2 focus:ring-prizm-500/40 focus:border-prizm-500 transition" />
+            </div>
+            <div class="sm:col-span-2">
+              <label for="notes" class="block text-sm font-semibold text-navy-900 mb-2">Anything else we should know? <span class="font-normal text-navy-900/50">(optional)</span></label>
+              <textarea id="notes" name="notes" rows="4" placeholder="Specific integrations, compliance needs, timeline, or budget expectations…"
+                class="w-full px-4 py-3 rounded-lg border border-black/10 bg-white text-sm text-navy-900 placeholder-navy-900/40 focus:outline-none focus:ring-2 focus:ring-prizm-500/40 focus:border-prizm-500 transition resize-none"></textarea>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <button type="submit" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm w-full sm:w-auto">
+              Get your custom proposal <span aria-hidden>→</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Plan Comparison -->
+  <section class="bg-surface-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">Platform plans at a glance</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Find the right fit for your operation.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">All plans include a 14-day free trial.</p>
+
+      <div class="mt-10 rounded-2xl border border-black/10 overflow-hidden reveal">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-navy-900 text-white">
+                <th class="text-left font-semibold px-5 py-4 w-[24%]">Feature</th>
+                <th class="text-center font-semibold px-4 py-4 w-[19%]">
+                  <div>Solo</div>
+                  <div class="text-xs font-normal text-white/60 mt-1">$149/mo</div>
+                </th>
+                <th class="text-center font-semibold px-4 py-4 w-[19%] text-prizm-400">
+                  <div>Forwarder</div>
+                  <div class="text-xs font-normal text-prizm-400/80 mt-1">$349/mo</div>
+                </th>
+                <th class="text-center font-semibold px-4 py-4 w-[19%] text-prizm-400">
+                  <div>Professional</div>
+                  <div class="text-xs font-normal text-prizm-400/80 mt-1">$899/mo</div>
+                </th>
+                <th class="text-center font-semibold px-4 py-4 w-[19%]">
+                  <div>Enterprise</div>
+                  <div class="text-xs font-normal text-white/60 mt-1">$2,499/mo</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-black/5 bg-white">
+              <tr>
+                <td class="px-5 py-3.5 font-medium text-navy-900">Users</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/70">3</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-prizm-700">5</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">25</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Unlimited</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-5 py-3.5 font-medium text-navy-900">Shipments / month</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/70">100</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-prizm-700">300</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">2,000</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Unlimited</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3.5 font-medium text-navy-900">AI quotes</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/70">50 / mo</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-prizm-700">150 / mo</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Unlimited</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Unlimited</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-5 py-3.5 font-medium text-navy-900">CRM contacts</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/70">200</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-prizm-700">Unlimited</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Unlimited</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Unlimited</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3.5 font-medium text-navy-900">Lead scoring</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-prizm-600 font-bold">✓</td>
+                <td class="px-4 py-3.5 text-center text-emerald-600 font-bold">✓</td>
+                <td class="px-4 py-3.5 text-center text-emerald-600 font-bold">✓</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-5 py-3.5 font-medium text-navy-900">API access</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-prizm-700">Basic</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Full + webhooks</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Full + custom</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3.5 font-medium text-navy-900">Carrier integrations</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-prizm-700">1</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">5</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Unlimited</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-5 py-3.5 font-medium text-navy-900">White-label portal</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-emerald-600 font-bold">✓</td>
+                <td class="px-4 py-3.5 text-center text-emerald-600 font-bold">✓</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3.5 font-medium text-navy-900">ITAR compliance</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-emerald-600 font-bold">✓</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-5 py-3.5 font-medium text-navy-900">SSO / SAML</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/30">—</td>
+                <td class="px-4 py-3.5 text-center text-emerald-600 font-bold">✓</td>
+              </tr>
+              <tr>
+                <td class="px-5 py-3.5 font-medium text-navy-900">Support</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/70">Email (next day)</td>
+                <td class="px-4 py-3.5 text-center text-navy-900/70">Email + chat (8 hr)</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">Phone + chat (4 hr)</td>
+                <td class="px-4 py-3.5 text-center font-semibold text-navy-900">24/7 (1 hr SLA)</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="bg-surface-100">
+                <td class="px-5 py-5"></td>
+                <td class="px-4 py-5 text-center">
+                  <a href="/pricing" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg border border-black/10 text-navy-900 hover:bg-white transition-colors">View pricing</a>
+                </td>
+                <td class="px-4 py-5 text-center">
+                  <a href="/pricing" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg border border-black/10 text-navy-900 hover:bg-white transition-colors">View pricing</a>
+                </td>
+                <td class="px-4 py-5 text-center">
+                  <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg bg-prizm-500 text-white hover:bg-prizm-600 transition-colors shadow-sm">Book demo</a>
+                </td>
+                <td class="px-4 py-5 text-center">
+                  <a href="#assessment" class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg bg-navy-900 text-white hover:bg-navy-800 transition-colors">Contact sales</a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">Your engagement in 4 steps</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">From discovery call to ongoing partnership.</h2>
+
+      <div class="mt-12 grid md:grid-cols-4 gap-6">
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <div class="w-10 h-10 rounded-full bg-prizm-500 text-white flex items-center justify-center font-bold mb-5">1</div>
+          <h3 class="text-base font-semibold text-navy-900">Discovery call</h3>
+          <p class="mt-2 text-sm text-navy-900/75">We learn about your operation, challenges, and goals. 30 minutes, no commitment.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <div class="w-10 h-10 rounded-full bg-prizm-500 text-white flex items-center justify-center font-bold mb-5">2</div>
+          <h3 class="text-base font-semibold text-navy-900">Custom proposal</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Tailored proposal with platform plan, services, and pricing specific to your needs.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <div class="w-10 h-10 rounded-full bg-prizm-500 text-white flex items-center justify-center font-bold mb-5">3</div>
+          <h3 class="text-base font-semibold text-navy-900">Implementation</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Our team configures, integrates, and trains your staff. Most teams go live in 1–4 weeks.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <div class="w-10 h-10 rounded-full bg-prizm-500 text-white flex items-center justify-center font-bold mb-5">4</div>
+          <h3 class="text-base font-semibold text-navy-900">Ongoing partnership</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Continuous optimization, quarterly reviews, and proactive support ensure long-term success.</p>
+        </div>
+      </div>
+
+      <div class="mt-14 text-center reveal">
+        <a href={`mailto:${CONTACT.salesEmail}`} class="text-sm font-mono text-navy-900/60 hover:text-prizm-600 transition-colors">{CONTACT.salesEmail}</a>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

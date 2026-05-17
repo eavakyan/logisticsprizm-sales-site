@@ -10,17 +10,20 @@ export const APP_BASE =
 export const API_BASE =
   import.meta.env.PUBLIC_API_URL ?? 'https://api.logisticsprizm.com';
 
-// signup/trial route to the marketing-site /request-demo lead-capture form
-// (which POSTs to /api/v1/public/demo-request → emails sales). Today the portal
-// has no self-serve registration UI — see CLAUDE.md Issue Resolution Log
-// (2026-05-08) for the routes audit and Phase 2 plan to build a real (auth)/signup
-// flow with email verification + auto-provisioning for Solo tier.
+// Headline "Start free trial" / "Book demo" CTAs route to Calendly direct-booking.
+// /request-demo remains the form-based fallback (POSTs to /api/v1/public/demo-request
+// → emails sales) for prospects who land on that page directly. Portal still has no
+// self-serve registration UI — see CLAUDE.md Issue Resolution Log (2026-05-08) for
+// the routes audit and Phase 2 plan to build a real (auth)/signup flow with email
+// verification + auto-provisioning for Solo tier.
 //
 // chat → mailto:support since no /portal/support route exists yet.
+export const CALENDLY_URL = 'https://calendly.com/gene-vugagroup/30min';
+
 export const APP_LINKS = {
   login: `${APP_BASE}/login`,
-  signup: `/request-demo`,
-  trial: `/request-demo?intent=trial&plan=growth`,
+  signup: CALENDLY_URL,
+  trial: CALENDLY_URL,
   tracking: `${APP_BASE}/tracking`,
   chat: `mailto:support@logisticsprizm.com`,
   api: `${API_BASE}/api/v1`,

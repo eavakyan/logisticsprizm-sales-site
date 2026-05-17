@@ -1,0 +1,137 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL } from '@/lib/links';
+
+const title = 'Real-Time Shipment Tracking & Supply Chain Visibility | LogisticsPrizm';
+const description = 'Track shipments across all transport modes with real-time visibility. Automated exception alerts, ETA predictions, and customer portal access.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Features', url: 'https://logisticsprizm.com/features' },
+    { name: 'Shipment Tracking', url: 'https://logisticsprizm.com/features/shipment-tracking' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'LogisticsPrizm Shipment Tracking',
+    description: 'Real-time shipment tracking across all transport modes with automated exception alerts, ETA predictions, and customer portal access.',
+    provider: { '@type': 'Organization', name: 'LogisticsPrizm' },
+    serviceType: 'Shipment Tracking Software',
+    areaServed: 'Worldwide',
+    url: 'https://logisticsprizm.com/features/shipment-tracking',
+  })} />
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 bg-surface-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">Feature · Real-time visibility</p>
+      <h1 class="mt-3 text-h1 font-bold text-navy-900">
+        Real-time shipment tracking & <span class="gradient-amber">supply-chain visibility</span>.
+      </h1>
+      <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+        Know where every shipment is, every minute. Automated alerts catch exceptions before they become
+        problems. Give your customers self-service tracking they actually use.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm">
+          Book my demo <span aria-hidden>→</span>
+        </a>
+        <a href="/features/ai-freight-quoting" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-black/10 text-navy-900 font-semibold hover:bg-white transition-colors">
+          Explore more features
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core tracking features -->
+  <section class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">Complete shipment visibility</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Every tracking feature a freight forwarder needs.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">From live maps to proactive exception management.</p>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Live tracking map</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Visualize all active shipments on an interactive map with real-time position updates, route overlays, and geofence alerts for key checkpoints.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Automated exception alerts</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Instant notifications for delays, route deviations, customs holds, temperature excursions, and other exceptions. Respond before your customers even notice.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">AI ETA predictions</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Machine-learning models analyze historical transit data, weather patterns, and carrier performance to predict arrival times more accurately than carrier ETAs.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Multi-modal support</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Track ocean containers, air cargo, FTL, LTL, and intermodal shipments from a single dashboard. Unified visibility across every transport mode.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Customer portal</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Give your customers self-service tracking through a branded portal. Reduce "where is my shipment?" calls by up to 80% and improve customer satisfaction.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Complete event timeline</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Every pickup, checkpoint, customs clearance, and delivery captured in a detailed event timeline. Full audit trail with timestamps and supporting documents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How visibility saves money -->
+  <section class="bg-surface-50 py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">How visibility saves you money</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Every "where's my shipment?" call costs time. Every missed exception costs money.</h2>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl bg-white border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-3">80%</div>
+          <h3 class="text-base font-semibold text-navy-900">Fewer check calls</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Self-service tracking via the customer portal eliminates the majority of inbound "where's my shipment?" calls, freeing operations for higher-value work.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-3">4 hrs</div>
+          <h3 class="text-base font-semibold text-navy-900">Earlier exception detection</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Automated monitoring catches delays an average of 4 hours before traditional carrier notifications, giving you time to reroute or notify customers proactively.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-3">35%</div>
+          <h3 class="text-base font-semibold text-navy-900">Higher customer retention</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Shippers who receive proactive tracking updates and have portal access show 35% higher retention. Visibility is no longer optional — it's expected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Better together</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Combine tracking with these features.</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <a href="/features/ai-freight-quoting" class="group rounded-xl bg-surface-50 border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">AI freight quoting</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Generate accurate quotes in 32 seconds with AI-powered pricing analysis.</p>
+        </a>
+        <a href="/features/logistics-crm" class="group rounded-xl bg-surface-50 border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Logistics CRM</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Manage leads, customers, and the full sales pipeline in one platform.</p>
+        </a>
+        <a href="/solutions/freight-forwarders" class="group rounded-xl bg-surface-50 border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Freight forwarder platform</h3>
+          <p class="mt-2 text-sm text-navy-900/75">See how all features come together for a complete freight forwarding solution.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

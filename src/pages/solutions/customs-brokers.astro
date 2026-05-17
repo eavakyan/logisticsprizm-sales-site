@@ -1,0 +1,138 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL } from '@/lib/links';
+
+const title = 'Customs Broker Software | Compliance-Ready Logistics Platform';
+const description = 'Streamline customs operations with AI-powered document management, shipment tracking, and built-in compliance tools. ITAR-ready for defense logistics.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Solutions', url: 'https://logisticsprizm.com/solutions' },
+    { name: 'Customs Brokers', url: 'https://logisticsprizm.com/solutions/customs-brokers' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'LogisticsPrizm Customs Brokerage Platform',
+    description: 'Customs brokerage software with AI-powered document management, compliance audit trails, CRM for importers/exporters, shipment tracking, and ITAR compliance.',
+    provider: { '@type': 'Organization', name: 'LogisticsPrizm' },
+    serviceType: 'Customs Brokerage Software',
+    areaServed: 'Worldwide',
+    url: 'https://logisticsprizm.com/solutions/customs-brokers',
+  })} />
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 bg-surface-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">Solution · Customs brokers</p>
+      <h1 class="mt-3 text-h1 font-bold text-navy-900">
+        Customs brokerage software with <span class="gradient-amber">built-in compliance</span>.
+      </h1>
+      <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+        Manage customs documentation, track shipments through clearance, and maintain audit-ready
+        compliance trails — all in one platform built for the regulatory complexity of cross-border trade.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm">
+          Get a custom quote <span aria-hidden>→</span>
+        </a>
+        <a href="#features" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-black/10 text-navy-900 font-semibold hover:bg-white transition-colors">
+          See features
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">The customs broker's challenge</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Cross-border trade is a documentation minefield.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">One missing form, one misclassification, one missed deadline — and cargo sits idle while penalties accumulate.</p>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Document overload</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Bills of lading, commercial invoices, certificates of origin, customs declarations, ISF filings — every shipment requires a stack of documents that must be perfect.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Compliance risk</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Regulations change constantly across jurisdictions. Manual tracking of HTS classifications, restricted parties, and filing deadlines leaves you one mistake away from penalties.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Manual filing processes</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Your team re-keys data across multiple systems, chases documents by email, and scrambles to meet filing deadlines. Every hour on admin is an hour not on clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section id="features" class="bg-surface-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">Compliance-first. Automation-driven.</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Document management, compliance, and visibility — together.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Document management</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Centralized storage for BOLs, customs forms, certificates of origin, and commercial invoices. AI-powered OCR extracts key data automatically, reducing manual entry.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Compliance audit trails</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Every action logged with immutable timestamps. When CBP comes knocking, pull complete audit trails in seconds — not days of digging through email and filing cabinets.</p>
+        </div>
+        <a href="/features/logistics-crm" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">CRM for importers & exporters</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Track client relationships, filing history, and preferences. AI lead scoring identifies high-value prospects so you focus on the accounts that matter.</p>
+        </a>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Clearance status tracking</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Track every shipment through the customs clearance pipeline in real time. Automated alerts for holds, exams, and releases so your clients know exactly where their cargo stands.</p>
+        </div>
+        <a href="/itar" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">ITAR defense customs</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Handle defense-related customs with ITAR-compliant workflows, USML classification tracking, and local AI processing that keeps controlled data on your infrastructure.</p>
+        </a>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Deadline & alert engine</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Automated reminders for filing deadlines, bond expirations, and liquidation dates. Never miss a critical deadline that could result in penalties or cargo delays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Compliance you can count on</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Less time on paperwork. More time growing your business.</h2>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-2">4 hrs+</div>
+          <div class="text-base font-semibold text-navy-900">Saved per day</div>
+          <p class="mt-2 text-sm text-navy-900/70">Hours saved daily on document handling, data entry, and filing through AI-powered automation and OCR.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-2">100%</div>
+          <div class="text-base font-semibold text-navy-900">Audit-ready</div>
+          <p class="mt-2 text-sm text-navy-900/70">Immutable compliance trails with timestamped records for every action. Pull complete audit reports in seconds.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 text-center reveal">
+          <div class="text-4xl font-extrabold text-prizm-600 mb-2">Real-time</div>
+          <div class="text-base font-semibold text-navy-900">Clearance status</div>
+          <p class="mt-2 text-sm text-navy-900/70">Give importers and exporters real-time visibility into customs clearance progress without a single phone call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

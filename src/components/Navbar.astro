@@ -1,5 +1,5 @@
 ---
-import { APP_LINKS, NAV_LINKS } from '@/lib/links';
+import { APP_LINKS, NAV_LINKS, CALENDLY_URL } from '@/lib/links';
 ---
 <header id="top" class="sticky top-0 z-40 bg-surface-50/80 backdrop-blur-md border-b border-black/5">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -20,7 +20,9 @@ import { APP_LINKS, NAV_LINKS } from '@/lib/links';
         class="hidden sm:inline text-sm font-medium text-navy-900/80 hover:text-prizm-600 transition-colors"
       >Sign in</a>
       <a
-        href="/request-demo"
+        href={CALENDLY_URL}
+        target="_blank"
+        rel="noopener"
         class="text-sm font-semibold px-4 py-2 rounded-lg bg-prizm-500 text-white hover:bg-prizm-600 transition-colors shadow-sm"
       >Book demo</a>
     </div>

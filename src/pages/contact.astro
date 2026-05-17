@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { CONTACT, APP_LINKS } from '@/lib/links';
+import { CONTACT, APP_LINKS, CALENDLY_URL } from '@/lib/links';
 ---
 <BaseLayout
   title="Contact LogisticsPrizm"
@@ -21,7 +21,7 @@ import { CONTACT, APP_LINKS } from '@/lib/links';
           <div class="font-mono text-xs text-prizm-600 uppercase tracking-wider">Sales</div>
           <h3 class="mt-2 text-xl font-bold text-navy-900">Looking at the product</h3>
           <a href={`mailto:${CONTACT.salesEmail}`} class="mt-3 block text-prizm-600 font-semibold">{CONTACT.salesEmail}</a>
-          <a href="/request-demo" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-prizm-600">Book a demo →</a>
+          <a href={CALENDLY_URL} target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-prizm-600">Book a demo →</a>
         </div>
         <div class="rounded-2xl bg-white border border-black/10 p-6">
           <div class="font-mono text-xs text-prizm-600 uppercase tracking-wider">Support</div>

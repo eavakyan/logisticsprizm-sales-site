@@ -1,0 +1,183 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL } from '@/lib/links';
+
+const title = 'Flexport Alternative for Freight Forwarders | LogisticsPrizm';
+const description = 'Looking for a Flexport alternative? LogisticsPrizm offers AI quoting, shipment tracking, CRM, and ITAR compliance at mid-market pricing.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Compare', url: 'https://logisticsprizm.com/compare' },
+    { name: 'Flexport alternative', url: 'https://logisticsprizm.com/compare/flexport-alternative' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Flexport Alternative — LogisticsPrizm vs Flexport Comparison',
+    description: 'Compare LogisticsPrizm with Flexport. AI quoting, shipment tracking, CRM, and ITAR compliance at mid-market pricing for independent freight forwarders.',
+    url: 'https://logisticsprizm.com/compare/flexport-alternative',
+    mainEntity: {
+      '@type': 'ItemList',
+      name: 'Flexport vs LogisticsPrizm Feature Comparison',
+      numberOfItems: 2,
+      itemListElement: [
+        { '@type': 'SoftwareApplication', name: 'LogisticsPrizm', applicationCategory: 'BusinessApplication', url: 'https://logisticsprizm.com' },
+        { '@type': 'SoftwareApplication', name: 'Flexport', applicationCategory: 'BusinessApplication' },
+      ],
+    },
+  })} />
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 bg-surface-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">Comparison · Flexport alternative</p>
+      <h1 class="mt-3 text-h1 font-bold text-navy-900">
+        The Flexport alternative built for <span class="gradient-amber">independent freight forwarders</span>.
+      </h1>
+      <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+        Flexport is building a digital freight forwarder — competing with you. LogisticsPrizm gives you the
+        same technology advantage without the conflict of interest. Own your customer relationships, your
+        data, and your margins.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm">
+          Book my demo <span aria-hidden>→</span>
+        </a>
+        <a href="#comparison" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-black/10 text-navy-900 font-semibold hover:bg-white transition-colors">
+          See full comparison
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section id="comparison" class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">LogisticsPrizm vs. Flexport</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">A side-by-side comparison of what matters most to independent freight forwarders.</h2>
+
+      <div class="mt-10 rounded-2xl border border-black/10 overflow-hidden reveal">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-navy-900 text-white">
+                <th class="text-left font-semibold px-6 py-4 w-1/3">Feature</th>
+                <th class="text-center font-semibold px-6 py-4 w-1/3 text-prizm-400">LogisticsPrizm</th>
+                <th class="text-center font-semibold px-6 py-4 w-1/3 text-white/70">Flexport</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-black/5 bg-white">
+              <tr>
+                <td class="px-6 py-4 font-medium text-navy-900">Business model</td>
+                <td class="px-6 py-4 text-center font-semibold text-navy-900">SaaS tool for your business</td>
+                <td class="px-6 py-4 text-center text-navy-900/70">Competes with you as a forwarder</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-6 py-4 font-medium text-navy-900">AI quoting</td>
+                <td class="px-6 py-4 text-center"><span class="font-semibold text-prizm-700">32-second AI quotes</span></td>
+                <td class="px-6 py-4 text-center text-navy-900/70">Instant quoting (their rates)</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium text-navy-900">Shipment tracking</td>
+                <td class="px-6 py-4 text-center"><span class="font-semibold text-prizm-700">Real-time, all carriers</span></td>
+                <td class="px-6 py-4 text-center text-navy-900/70">Their shipments only</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-6 py-4 font-medium text-navy-900">Built-in CRM</td>
+                <td class="px-6 py-4 text-center"><span class="font-semibold text-prizm-700">Full CRM with AI lead scoring</span></td>
+                <td class="px-6 py-4 text-center text-red-600">Not included</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium text-navy-900">ITAR compliance</td>
+                <td class="px-6 py-4 text-center"><span class="font-semibold text-prizm-700">Built-in with local AI</span></td>
+                <td class="px-6 py-4 text-center text-red-600">Not supported</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-6 py-4 font-medium text-navy-900">Target market</td>
+                <td class="px-6 py-4 text-center font-semibold text-navy-900">Mid-market forwarders ($5M–$500M)</td>
+                <td class="px-6 py-4 text-center text-navy-900/70">Enterprise shippers</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium text-navy-900">Data ownership</td>
+                <td class="px-6 py-4 text-center"><span class="font-semibold text-prizm-700">You own 100% of your data</span></td>
+                <td class="px-6 py-4 text-center text-navy-900/70">Shared platform data</td>
+              </tr>
+              <tr class="bg-surface-50">
+                <td class="px-6 py-4 font-medium text-navy-900">Self-hosted option</td>
+                <td class="px-6 py-4 text-center"><span class="font-semibold text-prizm-700">Available (Enterprise)</span></td>
+                <td class="px-6 py-4 text-center text-red-600">Cloud only</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium text-navy-900">Pricing</td>
+                <td class="px-6 py-4 text-center font-semibold text-navy-900">From $149/mo</td>
+                <td class="px-6 py-4 text-center text-navy-900/70">Custom enterprise pricing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section class="bg-surface-50 py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Why freight forwarders choose LogisticsPrizm</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">We empower freight forwarders. We don't compete with them.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-6">
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Own your data</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Your customer data, rate intelligence, and operational metrics stay yours. With self-hosted deployment options, your data never needs to touch a shared cloud environment.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Accessible pricing</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Enterprise-grade features at accessible pricing. Plans start at $149/month with transparent pricing — no per-shipment fees that scale against you as you grow.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">ITAR-ready</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Flexport doesn't support ITAR. LogisticsPrizm has ITAR compliance built in from day one — local AI processing, audit trails, USML tracking, and export control workflows.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Integrated CRM</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">No need for a separate CRM subscription. LogisticsPrizm includes AI lead scoring, customer management, and sales pipeline tracking designed specifically for logistics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Switching -->
+  <section class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="eyebrow reveal">Switching is simple</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Our onboarding team handles the heavy lifting.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose mx-auto reveal">Most forwarders are fully operational within one week.</p>
+
+      <div class="mt-12 grid sm:grid-cols-3 gap-6 text-left">
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <div class="w-10 h-10 rounded-lg bg-prizm-50 text-prizm-700 flex items-center justify-center font-bold mb-4">1</div>
+          <h3 class="text-base font-semibold text-navy-900">Import your data</h3>
+          <p class="mt-2 text-sm text-navy-900/75">We import customer records, historical quotes, and rate data from your existing tools. CSV, API, or manual — we handle it.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <div class="w-10 h-10 rounded-lg bg-prizm-50 text-prizm-700 flex items-center justify-center font-bold mb-4">2</div>
+          <h3 class="text-base font-semibold text-navy-900">Configure & train</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Set up your lanes, carriers, and workflows. The AI begins learning from your historical data immediately.</p>
+        </div>
+        <div class="rounded-xl bg-surface-50 border border-black/10 p-7 reveal">
+          <div class="w-10 h-10 rounded-lg bg-prizm-50 text-prizm-700 flex items-center justify-center font-bold mb-4">3</div>
+          <h3 class="text-base font-semibold text-navy-900">Go live</h3>
+          <p class="mt-2 text-sm text-navy-900/75">Your team is operational with dedicated onboarding support. Most teams see ROI within the first month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

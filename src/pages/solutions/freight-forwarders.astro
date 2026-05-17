@@ -1,0 +1,154 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import { CALENDLY_URL } from '@/lib/links';
+
+const title = 'Freight Forwarding Software — All-in-One Platform | LogisticsPrizm';
+const description = 'Purpose-built logistics software for freight forwarders. AI quoting, shipment tracking, CRM, carrier management, and ITAR compliance in one platform. Replace 5–15 legacy systems.';
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://logisticsprizm.com/' },
+    { name: 'Solutions', url: 'https://logisticsprizm.com/solutions' },
+    { name: 'Freight Forwarders', url: 'https://logisticsprizm.com/solutions/freight-forwarders' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'LogisticsPrizm Freight Forwarding Platform',
+    description: 'All-in-one freight forwarding software with AI quoting, shipment tracking, CRM, carrier management, and ITAR compliance.',
+    provider: { '@type': 'Organization', name: 'LogisticsPrizm' },
+    serviceType: 'Freight Forwarding Software',
+    areaServed: 'Worldwide',
+    url: 'https://logisticsprizm.com/solutions/freight-forwarders',
+  })} />
+
+  <!-- Hero -->
+  <section class="pt-24 pb-16 bg-surface-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="eyebrow">Solution · All-in-one platform</p>
+      <h1 class="mt-3 text-h1 font-bold text-navy-900">
+        The all-in-one platform for <span class="gradient-amber">freight forwarders</span>.
+      </h1>
+      <p class="mt-5 text-lg text-navy-900/80 max-w-prose">
+        Replace 5–15 legacy systems with one intelligent platform. AI quoting, real-time tracking, CRM,
+        carrier management, analytics, and ITAR compliance — built specifically for how freight forwarders
+        actually work.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg bg-prizm-500 text-white font-semibold hover:bg-prizm-600 transition-colors shadow-sm">
+          Book my demo <span aria-hidden>→</span>
+        </a>
+        <a href="/pricing" class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-lg border border-black/10 text-navy-900 font-semibold hover:bg-white transition-colors">
+          View pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">The freight forwarder's challenge</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">You're running a modern logistics operation with tools from 2005.</h2>
+      <p class="mt-4 text-navy-900/75 max-w-prose reveal">Disconnected systems create data silos, manual work, and blind spots.</p>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Fragmented tools</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Separate systems for quoting, tracking, CRM, documents, and accounting. Your team wastes hours copying data between platforms and reconciling discrepancies.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Manual processes</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Rate lookups take 30–60 minutes. Tracking updates require phone calls. Lead follow-ups fall through the cracks. Your best people spend their time on data entry instead of selling.</p>
+        </div>
+        <div class="rounded-xl border border-black/10 bg-surface-50 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">No visibility</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">You can't see pipeline health, shipment status, or customer satisfaction in real time. Decisions are based on gut feel and outdated spreadsheets instead of live data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section class="bg-surface-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="eyebrow reveal">One platform. Every function.</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Replace your fragmented tool stack with one integrated platform.</h2>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/features/ai-freight-quoting" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">AI freight quoting</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Generate accurate quotes in 32 seconds using AI-powered rate analysis, historical data, and carrier rate cards.</p>
+        </a>
+        <a href="/features/shipment-tracking" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Shipment tracking</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Real-time visibility across all modes with automated exception alerts, ETA predictions, and customer self-service portal.</p>
+        </a>
+        <a href="/features/logistics-crm" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">Logistics CRM</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">AI lead scoring, customer management, and sales pipeline tracking purpose-built for freight forwarding.</p>
+        </a>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">Carrier management</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Manage carrier relationships, rate agreements, performance scorecards, and API integrations from one central hub.</p>
+        </div>
+        <div class="rounded-xl bg-white border border-black/10 p-7 reveal">
+          <h3 class="text-lg font-semibold text-navy-900">AI analytics</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Real-time dashboards, predictive insights, lane analysis, and profitability reporting powered by AI that understands logistics data.</p>
+        </div>
+        <a href="/itar" class="group rounded-xl bg-white border border-black/10 p-7 hover:border-prizm-500/40 transition-colors reveal">
+          <h3 class="text-lg font-semibold text-navy-900 group-hover:text-prizm-600 transition-colors">ITAR compliance</h3>
+          <p class="mt-2 text-sm text-navy-900/75 leading-relaxed">Local AI processing, immutable audit trails, USML tracking, and export control workflows for defense logistics.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Replace Legacy Systems -->
+  <section class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="eyebrow reveal">Replace your entire tool stack</p>
+      <h2 class="mt-3 text-h2 font-bold text-navy-900 reveal">Stop paying for 5–15 separate tools that don't talk to each other.</h2>
+
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3">
+        {[
+          'TMS Software',
+          'Rate Management Tool',
+          'CRM (Salesforce, etc.)',
+          'Tracking Platform',
+          'Document Management',
+          'Analytics/BI Tool',
+          'Customer Portal',
+          'Carrier Rating Tool',
+          'Compliance Software',
+        ].map((label) => (
+          <div class="rounded-xl bg-surface-50 border border-black/10 p-5 text-center reveal">
+            <div class="text-sm font-medium text-navy-900/50 line-through">{label}</div>
+            <div class="mt-1 text-sm font-semibold text-prizm-600">Included</div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 rounded-2xl bg-navy-900 text-white p-8 md:p-12 reveal">
+        <div class="grid md:grid-cols-3 gap-6 items-center text-center">
+          <div>
+            <div class="text-3xl font-extrabold text-white/50 line-through">$15,000+/mo</div>
+            <div class="mt-1 text-sm text-white/60">Separate tools combined</div>
+          </div>
+          <div class="text-prizm-400 text-2xl font-bold">→</div>
+          <div>
+            <div class="text-3xl font-extrabold text-prizm-400">From $149/mo</div>
+            <div class="mt-1 text-sm text-white/70">LogisticsPrizm all-in-one</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
