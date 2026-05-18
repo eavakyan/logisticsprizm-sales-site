@@ -103,6 +103,25 @@ jobs:
             dist/ vps:${{ env.WEB_STATIC_DIR }}/
           ssh vps "sudo chown -R www-data:www-data ${{ env.WEB_STATIC_DIR }} || true"
 
+      - name: Snapshot for watchdog (auto-restore source)
+        # The watchdog (logisticsprizm-marketing-watchdog.timer on the VPS,
+        # every 5 min) restores from /var/backups/logisticsprizm-marketing/latest.tar.gz
+        # if it ever detects the live site has lost the 'hero-frame' signature.
+        # This step keeps that snapshot fresh — exactly the dist we just rsynced.
+        run: |
+          set -euo pipefail
+          ssh vps 'sudo mkdir -p /var/backups/logisticsprizm-marketing'
+          ssh vps "sudo bash -c '
+            set -euo pipefail
+            cd /var/www/logisticsprizm/marketing
+            STAMP=\$(date -u +%Y%m%d-%H%M%S)
+            SNAP=/var/backups/logisticsprizm-marketing/snapshot-\$STAMP.tar.gz
+            tar -czf \$SNAP .
+            ln -sf \$SNAP /var/backups/logisticsprizm-marketing/latest.tar.gz
+            # keep last 5 snapshots for forensics, prune the rest
+            ls -1t /var/backups/logisticsprizm-marketing/snapshot-*.tar.gz 2>/dev/null | tail -n +6 | xargs -r rm -f
+            ls -lh /var/backups/logisticsprizm-marketing/latest.tar.gz
+          '"
       - name: Post-deploy smoke
         run: |
           set -euo pipefail
