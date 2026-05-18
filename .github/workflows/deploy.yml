@@ -1,0 +1,120 @@
+# =============================================================================
+# logisticsprizm-sales-site — Deploy to VPS
+# -----------------------------------------------------------------------------
+# This repo IS the production source for logisticsprizm.com. Nginx on the
+# VPS serves /var/www/logisticsprizm/marketing/ as the root for that domain.
+# Every push to main builds with Astro and rsyncs the dist/ output here.
+#
+# Required GitHub secrets (set via `gh secret set ... --repo eavakyan/logisticsprizm-sales-site`):
+#   VPS_HOST     - 187.124.84.140
+#   VPS_PORT     - 22
+#   VPS_USER     - root  (has passwordless sudo; same key as the monorepo deploy)
+#   VPS_SSH_KEY  - base64 of ~/.ssh/id_logisticsprizm  (no line wrap)
+#
+# This workflow is the canonical deploy path for the public landing page.
+# The companion monorepo (eavakyan/logisticsprizm) deploy.sh has step 7
+# (marketing static sync) DISABLED specifically so it cannot overwrite what
+# this workflow puts in place. See:
+#   - eavakyan/logisticsprizm@infra/scripts/deploy.sh:206
+#   - eavakyan/logisticsprizm@CLAUDE.md "Active Configuration Notes"
+# =============================================================================
+
+name: Deploy sales-site to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  # Queue, never cancel — a partial-rsync mid-overwrite is worse than waiting.
+  group: deploy-sales-site
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '20'
+  WEB_STATIC_DIR: /var/www/logisticsprizm/marketing
+
+jobs:
+  deploy:
+    name: Build & rsync to VPS
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://logisticsprizm.com
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build (Astro static)
+        run: npm run build
+
+      - name: Verify build output sanity
+        run: |
+          set -euo pipefail
+          test -f dist/index.html
+          # Defensive: every build of THIS repo must contain the slide-deck hero.
+          # If this grep fails the build/repo is broken and we must not deploy.
+          grep -q 'hero-frame' dist/index.html || { echo '::error::dist/index.html missing hero-frame — refusing to deploy a broken build'; exit 1; }
+          grep -q 'hero-video.html' dist/index.html || { echo '::error::dist/index.html missing hero-video.html reference — refusing to deploy a broken build'; exit 1; }
+          test -f dist/media/hero-video.html
+          echo "Build sanity OK."
+
+      - name: Configure SSH
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          echo "$VPS_SSH_KEY" | base64 -d > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$VPS_PORT" -H "$VPS_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          cat > ~/.ssh/config <<EOF
+          Host vps
+            HostName $VPS_HOST
+            Port $VPS_PORT
+            User ${{ secrets.VPS_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            IdentitiesOnly yes
+            StrictHostKeyChecking yes
+            UserKnownHostsFile ~/.ssh/known_hosts
+            ServerAliveInterval 30
+          EOF
+          chmod 600 ~/.ssh/config
+
+      - name: Rsync dist/ to ${{ env.WEB_STATIC_DIR }}
+        run: |
+          set -euo pipefail
+          ssh vps "mkdir -p ${{ env.WEB_STATIC_DIR }}"
+          rsync -avz --delete --rsync-path="sudo rsync" \
+            dist/ vps:${{ env.WEB_STATIC_DIR }}/
+          ssh vps "sudo chown -R www-data:www-data ${{ env.WEB_STATIC_DIR }} || true"
+
+      - name: Post-deploy smoke
+        run: |
+          set -euo pipefail
+          # Direct-to-origin (bypass Cloudflare) so we test the actual rsync output.
+          curl -s --resolve logisticsprizm.com:443:${{ secrets.VPS_HOST }} -k https://logisticsprizm.com/ > /tmp/served.html
+          grep -q 'hero-frame' /tmp/served.html       || { echo '::error::served HTML missing hero-frame post-deploy'; exit 1; }
+          grep -q 'hero-video.html' /tmp/served.html  || { echo '::error::served HTML missing hero-video.html post-deploy'; exit 1; }
+          # Hero iframe loads
+          code=$(curl -s -o /dev/null -w '%{http_code}' --resolve logisticsprizm.com:443:${{ secrets.VPS_HOST }} -k https://logisticsprizm.com/media/hero-video.html)
+          [ "$code" = "200" ] || { echo "::error::/media/hero-video.html returned HTTP $code (expected 200)"; exit 1; }
+          echo "Post-deploy smoke OK."
+
+      - name: Clean up SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key ~/.ssh/config
