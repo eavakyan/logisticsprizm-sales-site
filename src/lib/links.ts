@@ -10,20 +10,26 @@ export const APP_BASE =
 export const API_BASE =
   import.meta.env.PUBLIC_API_URL ?? 'https://api.logisticsprizm.com';
 
-// Headline "Start free trial" / "Book demo" CTAs route to Calendly direct-booking.
-// /request-demo remains the form-based fallback (POSTs to /api/v1/public/demo-request
-// → emails sales) for prospects who land on that page directly. Portal still has no
-// self-serve registration UI — see CLAUDE.md Issue Resolution Log (2026-05-08) for
-// the routes audit and Phase 2 plan to build a real (auth)/signup flow with email
-// verification + auto-provisioning for Solo tier.
+// 2026-05-19 — real self-serve signup shipped on the portal. The headline
+// "Start free trial" / "Sign up" CTAs now land users in the real registration
+// flow (no-CC 14-day trial on Professional tier). Calendly is still the
+// landing for explicit "Book a demo" / "Talk to sales" buttons, and the
+// /request-demo form-based fallback (POSTs to /api/v1/public/demo-request →
+// emails sales) is unchanged for prospects who want the high-touch path.
 //
 // chat → mailto:support since no /portal/support route exists yet.
 export const CALENDLY_URL = 'https://calendly.com/gene-vugagroup/30min';
 
 export const APP_LINKS = {
   login: `${APP_BASE}/login`,
-  signup: CALENDLY_URL,
-  trial: CALENDLY_URL,
+  // Real registration: 14-day no-CC trial on Professional tier.
+  signup: `${APP_BASE}/signup`,
+  // "Start trial" intent — same destination, the portal reads ?intent=trial
+  // to render the trial-flavored copy on the signup form.
+  trial: `${APP_BASE}/signup?intent=trial`,
+  // High-touch sales path (preserved for users who want to talk first).
+  contactSales: `${APP_BASE}/contact-sales`,
+  bookDemo: CALENDLY_URL,
   tracking: `${APP_BASE}/tracking`,
   chat: `mailto:support@logisticsprizm.com`,
   api: `${API_BASE}/api/v1`,
